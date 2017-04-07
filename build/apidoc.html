@@ -1,0 +1,1904 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/node-influx/node-influx#readme"
+
+    >influx (v5.0.6)</a>
+</h1>
+<h4>InfluxDB Client</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx">module influx</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Expression">
+            function <span class="apidocSignatureSpan">influx.</span>Expression
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB">
+            function <span class="apidocSignatureSpan">influx.</span>InfluxDB
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Measurement">
+            function <span class="apidocSignatureSpan">influx.</span>Measurement
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Raw">
+            function <span class="apidocSignatureSpan">influx.</span>Raw
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.ResultError">
+            function <span class="apidocSignatureSpan">influx.</span>ResultError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.parseMeasurement">
+            function <span class="apidocSignatureSpan">influx.</span>parseMeasurement
+            <span class="apidocSignatureSpan">(q)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.parseWhere">
+            function <span class="apidocSignatureSpan">influx.</span>parseWhere
+            <span class="apidocSignatureSpan">(q)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.toNanoDate">
+            function <span class="apidocSignatureSpan">influx.</span>toNanoDate
+            <span class="apidocSignatureSpan">(timestamp)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>Expression.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>FieldType</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>InfluxDB.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>Measurement.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>Precision</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>Raw.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>ResultError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>escape</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.Expression">module influx.Expression</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Expression.Expression">
+            function <span class="apidocSignatureSpan">influx.</span>Expression
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.Expression.prototype">module influx.Expression.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Expression.prototype.exp">
+            function <span class="apidocSignatureSpan">influx.Expression.prototype.</span>exp
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Expression.prototype.field">
+            function <span class="apidocSignatureSpan">influx.Expression.prototype.</span>field
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Expression.prototype.tag">
+            function <span class="apidocSignatureSpan">influx.Expression.prototype.</span>tag
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Expression.prototype.toString">
+            function <span class="apidocSignatureSpan">influx.Expression.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Expression.prototype.value">
+            function <span class="apidocSignatureSpan">influx.Expression.prototype.</span>value
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.InfluxDB">module influx.InfluxDB</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.InfluxDB">
+            function <span class="apidocSignatureSpan">influx.</span>InfluxDB
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.InfluxDB.prototype">module influx.InfluxDB.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.alterRetentionPolicy">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>alterRetentionPolicy
+            <span class="apidocSignatureSpan">(name, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.createContinuousQuery">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>createContinuousQuery
+            <span class="apidocSignatureSpan">(name, query, database)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.createDatabase">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>createDatabase
+            <span class="apidocSignatureSpan">(databaseName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.createRetentionPolicy">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>createRetentionPolicy
+            <span class="apidocSignatureSpan">(name, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.createUser">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>createUser
+            <span class="apidocSignatureSpan">(username, password, admin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.defaultDB">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>defaultDB
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.dropContinuousQuery">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>dropContinuousQuery
+            <span class="apidocSignatureSpan">(name, database)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.dropDatabase">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>dropDatabase
+            <span class="apidocSignatureSpan">(databaseName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.dropMeasurement">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>dropMeasurement
+            <span class="apidocSignatureSpan">(measurement, database)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.dropRetentionPolicy">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>dropRetentionPolicy
+            <span class="apidocSignatureSpan">(name, database)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.dropSeries">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>dropSeries
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.dropUser">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>dropUser
+            <span class="apidocSignatureSpan">(username)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.getDatabaseNames">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>getDatabaseNames
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.getMeasurements">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>getMeasurements
+            <span class="apidocSignatureSpan">(database)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.getQueryOpts">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>getQueryOpts
+            <span class="apidocSignatureSpan">(params, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.getSeries">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>getSeries
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.getUsers">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>getUsers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.grantAdminPrivilege">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>grantAdminPrivilege
+            <span class="apidocSignatureSpan">(username)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.grantPrivilege">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>grantPrivilege
+            <span class="apidocSignatureSpan">(username, privilege, database)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.ping">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>ping
+            <span class="apidocSignatureSpan">(timeout)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.query">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>query
+            <span class="apidocSignatureSpan">(query, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.queryRaw">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>queryRaw
+            <span class="apidocSignatureSpan">(query, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.revokeAdminPrivilege">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>revokeAdminPrivilege
+            <span class="apidocSignatureSpan">(username)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.revokePrivilege">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>revokePrivilege
+            <span class="apidocSignatureSpan">(username, privilege, database)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.setPassword">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>setPassword
+            <span class="apidocSignatureSpan">(username, password)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.showContinousQueries">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>showContinousQueries
+            <span class="apidocSignatureSpan">(database)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.showRetentionPolicies">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>showRetentionPolicies
+            <span class="apidocSignatureSpan">(database)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.writeMeasurement">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>writeMeasurement
+            <span class="apidocSignatureSpan">(measurement, points, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.InfluxDB.prototype.writePoints">
+            function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>writePoints
+            <span class="apidocSignatureSpan">(points, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.Measurement">module influx.Measurement</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Measurement.Measurement">
+            function <span class="apidocSignatureSpan">influx.</span>Measurement
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.Measurement.prototype">module influx.Measurement.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Measurement.prototype.db">
+            function <span class="apidocSignatureSpan">influx.Measurement.prototype.</span>db
+            <span class="apidocSignatureSpan">(db)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Measurement.prototype.name">
+            function <span class="apidocSignatureSpan">influx.Measurement.prototype.</span>name
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Measurement.prototype.policy">
+            function <span class="apidocSignatureSpan">influx.Measurement.prototype.</span>policy
+            <span class="apidocSignatureSpan">(retentionPolicy)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Measurement.prototype.toString">
+            function <span class="apidocSignatureSpan">influx.Measurement.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.Raw">module influx.Raw</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Raw.Raw">
+            function <span class="apidocSignatureSpan">influx.</span>Raw
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.Raw.prototype">module influx.Raw.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.Raw.prototype.getValue">
+            function <span class="apidocSignatureSpan">influx.Raw.prototype.</span>getValue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.ResultError">module influx.ResultError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.ResultError.ResultError">
+            function <span class="apidocSignatureSpan">influx.</span>ResultError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.ResultError.prototype">module influx.ResultError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.ResultError.prototype.constructor">
+            function <span class="apidocSignatureSpan">influx.ResultError.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.escape">module influx.escape</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.escape.measurement">
+            function <span class="apidocSignatureSpan">influx.escape.</span>measurement
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.escape.quoted">
+            function <span class="apidocSignatureSpan">influx.escape.</span>quoted
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.escape.stringLit">
+            function <span class="apidocSignatureSpan">influx.escape.</span>stringLit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.escape.tag">
+            function <span class="apidocSignatureSpan">influx.escape.</span>tag
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx" id="apidoc.module.influx">module influx</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Expression" id="apidoc.element.influx.Expression">
+        function <span class="apidocSignatureSpan">influx.</span>Expression
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Expression() {
+    this.query = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB" id="apidoc.element.influx.InfluxDB">
+        function <span class="apidocSignatureSpan">influx.</span>InfluxDB
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InfluxDB(options) {
+    var _this = this;
+<span class="apidocCodeCommentSpan">    /**
+     * Map of Schema instances defining measurements in Influx.
+     * @private
+     */
+</span>    this.schema = Object.create(null);
+    // Figure out how to parse whatever we were passed in into a IClusterConfig.
+    if (typeof options === &#x27;string&#x27;) {
+        options = parseOptionsUrl(options);
+    }
+    else if (!options) {
+        options = defaultHost;
+    }
+    if (!options.hasOwnProperty(&#x27;hosts&#x27;)) {
+        options = {
+            database: options.database,
+            hosts: [options],
+            password: options.password,
+            pool: options.pool,
+            schema: options.schema,
+            username: options.username,
+        };
+    }
+    var resolved = options;
+    resolved.hosts = resolved.hosts.map(function (host) {
+        return defaults({
+            host: host.host,
+            port: host.port,
+            protocol: host.protocol,
+            options: host.options,
+        }, defaultHost);
+    });
+    this.pool = new pool_1.Pool(resolved.pool);
+    this.options = defaults(resolved, defaultOptions);
+    resolved.hosts.forEach(function (host) {
+        _this.pool.addHost(host.protocol + &#x22;://&#x22; + host.host + &#x22;:&#x22; + host.port, host.options);
+    });
+    this.options.schema.forEach(function (schema) {
+        var db = schema.database = schema.database || _this.options.database;
+        if (!db) {
+            throw new Error(&#x22;Schema &#x22; + schema.measurement + &#x22; doesn&#x27;t have a database specified,&#x22; +
+                &#x27;and no default database is provided!&#x27;);
+        }
+        if (!_this.schema[db]) {
+            _this.schema[db] = Object.create(null);
+        }
+        _this.schema[db][schema.measurement] = new schema_1.Schema(schema);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Measurement" id="apidoc.element.influx.Measurement">
+        function <span class="apidocSignatureSpan">influx.</span>Measurement
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Measurement() {
+    this.parts = [null, null, null];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Raw" id="apidoc.element.influx.Raw">
+        function <span class="apidocSignatureSpan">influx.</span>Raw
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Raw(value) {
+    this.value = value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.ResultError" id="apidoc.element.influx.ResultError">
+        function <span class="apidocSignatureSpan">influx.</span>ResultError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ResultError(message) {
+    var _this = _super.call(this) || this;
+    _this.message = &#x22;Error from InfluxDB: &#x22; + message;
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.parseMeasurement" id="apidoc.element.influx.parseMeasurement">
+        function <span class="apidocSignatureSpan">influx.</span>parseMeasurement
+        <span class="apidocSignatureSpan">(q)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseMeasurement(q) {
+    if (typeof q.measurement === &#x27;function&#x27;) {
+        return q.measurement(new Measurement()).toString();
+    }
+    return q.measurement;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.parseWhere" id="apidoc.element.influx.parseWhere">
+        function <span class="apidocSignatureSpan">influx.</span>parseWhere
+        <span class="apidocSignatureSpan">(q)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseWhere(q) {
+    if (typeof q.where === &#x27;function&#x27;) {
+        return q.where(new Expression()).toString();
+    }
+    return q.where;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.toNanoDate" id="apidoc.element.influx.toNanoDate">
+        function <span class="apidocSignatureSpan">influx.</span>toNanoDate
+        <span class="apidocSignatureSpan">(timestamp)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toNanoDate(timestamp) {
+    var date = new Date(Math.floor(Number(timestamp) / nsPer.ms));
+    date._nanoTime = timestamp;
+    date.getNanoTime = nanoDateMethods.getNanoTimeFromStamp;
+    date.toNanoISOString = nanoDateMethods.toNanoISOStringFromStamp;
+    return date;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.Expression" id="apidoc.module.influx.Expression">module influx.Expression</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Expression.Expression" id="apidoc.element.influx.Expression.Expression">
+        function <span class="apidocSignatureSpan">influx.</span>Expression
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Expression() {
+    this.query = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.Expression.prototype" id="apidoc.module.influx.Expression.prototype">module influx.Expression.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Expression.prototype.exp" id="apidoc.element.influx.Expression.prototype.exp">
+        function <span class="apidocSignatureSpan">influx.Expression.prototype.</span>exp
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exp = function (fn) {
+    this.query.push(&#x27;(&#x27; + fn(new Expression()).toString() + &#x27;)&#x27;);
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Expression.prototype.field" id="apidoc.element.influx.Expression.prototype.field">
+        function <span class="apidocSignatureSpan">influx.Expression.prototype.</span>field
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">field = function (name) {
+    this.query.push(grammar_1.escape.quoted(name));
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Expression.prototype.tag" id="apidoc.element.influx.Expression.prototype.tag">
+        function <span class="apidocSignatureSpan">influx.Expression.prototype.</span>tag
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tag = function (name) {
+    this.field(name);
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Expression.prototype.toString" id="apidoc.element.influx.Expression.prototype.toString">
+        function <span class="apidocSignatureSpan">influx.Expression.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return this.query.join(&#x27; &#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Expression.prototype.value" id="apidoc.element.influx.Expression.prototype.value">
+        function <span class="apidocSignatureSpan">influx.Expression.prototype.</span>value
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">value = function (value) {
+    switch (typeof value) {
+        case &#x27;number&#x27;:
+            this.query.push(value);
+            return this;
+        case &#x27;string&#x27;:
+            this.query.push(grammar_1.escape.stringLit(value));
+            return this;
+        case &#x27;boolean&#x27;:
+            this.query.push(value ? &#x27;TRUE&#x27; : &#x27;FALSE&#x27;);
+            return this;
+        default:
+            if (value instanceof Date) {
+                this.query.push(grammar_1.formatDate(value));
+                return this;
+            }
+            if (value instanceof RegExp) {
+                if (regexHasFlags(value)) {
+                    throw new Error(&#x27;Attempted to query using a regex with flags, &#x27; +
+                        &#x27;but Influx doesn\&#x27;t support flags in queries.&#x27;);
+                }
+                this.query.push(&#x27;/&#x27; + value.source + &#x27;/&#x27;);
+                return this;
+            }
+            if (value &#x26;&#x26; typeof value.toString === &#x27;function&#x27;) {
+                this.query.push(value.toString());
+                return this;
+            }
+            throw new Error(&#x22;node-influx doesn&#x27;t know how to encode the provided value into a &#x22; +
+                &#x27;query. If you think this is a bug, open an issue here: https://git.io/influx-err&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.InfluxDB" id="apidoc.module.influx.InfluxDB">module influx.InfluxDB</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.InfluxDB" id="apidoc.element.influx.InfluxDB.InfluxDB">
+        function <span class="apidocSignatureSpan">influx.</span>InfluxDB
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InfluxDB(options) {
+    var _this = this;
+<span class="apidocCodeCommentSpan">    /**
+     * Map of Schema instances defining measurements in Influx.
+     * @private
+     */
+</span>    this.schema = Object.create(null);
+    // Figure out how to parse whatever we were passed in into a IClusterConfig.
+    if (typeof options === &#x27;string&#x27;) {
+        options = parseOptionsUrl(options);
+    }
+    else if (!options) {
+        options = defaultHost;
+    }
+    if (!options.hasOwnProperty(&#x27;hosts&#x27;)) {
+        options = {
+            database: options.database,
+            hosts: [options],
+            password: options.password,
+            pool: options.pool,
+            schema: options.schema,
+            username: options.username,
+        };
+    }
+    var resolved = options;
+    resolved.hosts = resolved.hosts.map(function (host) {
+        return defaults({
+            host: host.host,
+            port: host.port,
+            protocol: host.protocol,
+            options: host.options,
+        }, defaultHost);
+    });
+    this.pool = new pool_1.Pool(resolved.pool);
+    this.options = defaults(resolved, defaultOptions);
+    resolved.hosts.forEach(function (host) {
+        _this.pool.addHost(host.protocol + &#x22;://&#x22; + host.host + &#x22;:&#x22; + host.port, host.options);
+    });
+    this.options.schema.forEach(function (schema) {
+        var db = schema.database = schema.database || _this.options.database;
+        if (!db) {
+            throw new Error(&#x22;Schema &#x22; + schema.measurement + &#x22; doesn&#x27;t have a database specified,&#x22; +
+                &#x27;and no default database is provided!&#x27;);
+        }
+        if (!_this.schema[db]) {
+            _this.schema[db] = Object.create(null);
+        }
+        _this.schema[db][schema.measurement] = new schema_1.Schema(schema);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.InfluxDB.prototype" id="apidoc.module.influx.InfluxDB.prototype">module influx.InfluxDB.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.alterRetentionPolicy" id="apidoc.element.influx.InfluxDB.prototype.alterRetentionPolicy">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>alterRetentionPolicy
+        <span class="apidocSignatureSpan">(name, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">alterRetentionPolicy = function (name, options) {
+    var q = &#x22;alter retention policy &#x22; + grammar.escape.quoted(name) + &#x22; on &#x22;
+        + grammar.escape.quoted(options.database || this.defaultDB())
+        + (&#x22; duration &#x22; + options.duration + &#x22; replication &#x22; + options.replication)
+        + (options.isDefault ? &#x27; default&#x27; : &#x27;&#x27;);
+    return this.pool.json(this.getQueryOpts({ q: q }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.createContinuousQuery" id="apidoc.element.influx.InfluxDB.prototype.createContinuousQuery">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>createContinuousQuery
+        <span class="apidocSignatureSpan">(name, query, database)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createContinuousQuery = function (name, query, database) {
+    if (database === void 0) { database = this.defaultDB(); }
+    return this.pool.json(this.getQueryOpts({
+        q: &#x22;create continuous query &#x22; + grammar.escape.quoted(name)
+            + (&#x22; on &#x22; + grammar.escape.quoted(database) + &#x22; begin &#x22; + query + &#x22; end&#x22;),
+    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.createDatabase" id="apidoc.element.influx.InfluxDB.prototype.createDatabase">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>createDatabase
+        <span class="apidocSignatureSpan">(databaseName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createDatabase = function (databaseName) {
+    return this.pool.json(this.getQueryOpts({
+        q: &#x22;create database &#x22; + grammar.escape.quoted(databaseName),
+    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.createRetentionPolicy" id="apidoc.element.influx.InfluxDB.prototype.createRetentionPolicy">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>createRetentionPolicy
+        <span class="apidocSignatureSpan">(name, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createRetentionPolicy = function (name, options) {
+    var q = &#x22;create retention policy &#x22; + grammar.escape.quoted(name) + &#x22; on &#x22;
+        + grammar.escape.quoted(options.database || this.defaultDB())
+        + (&#x22; duration &#x22; + options.duration + &#x22; replication &#x22; + options.replication)
+        + (options.isDefault ? &#x27; default&#x27; : &#x27;&#x27;);
+    return this.pool.json(this.getQueryOpts({ q: q }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.createUser" id="apidoc.element.influx.InfluxDB.prototype.createUser">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>createUser
+        <span class="apidocSignatureSpan">(username, password, admin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createUser = function (username, password, admin) {
+    if (admin === void 0) { admin = false; }
+    return this.pool.json(this.getQueryOpts({
+        q: &#x22;create user &#x22; + grammar.escape.quoted(username) + &#x22; with password &#x22;
+            + grammar.escape.stringLit(password)
+            + (admin ? &#x27; with all privileges&#x27; : &#x27;&#x27;),
+    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.defaultDB" id="apidoc.element.influx.InfluxDB.prototype.defaultDB">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>defaultDB
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defaultDB = function () {
+    if (!this.options.database) {
+        throw new Error(&#x27;Attempted to run an influx query without a default&#x27;
+            + &#x27; database specified or an explicit database provided.&#x27;);
+    }
+    return this.options.database;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.dropContinuousQuery" id="apidoc.element.influx.InfluxDB.prototype.dropContinuousQuery">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>dropContinuousQuery
+        <span class="apidocSignatureSpan">(name, database)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dropContinuousQuery = function (name, database) {
+    if (database === void 0) { database = this.defaultDB(); }
+    return this.pool.json(this.getQueryOpts({
+        q: &#x22;drop continuous query &#x22; + grammar.escape.quoted(name)
+            + (&#x22; on &#x22; + grammar.escape.quoted(database)),
+    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.dropDatabase" id="apidoc.element.influx.InfluxDB.prototype.dropDatabase">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>dropDatabase
+        <span class="apidocSignatureSpan">(databaseName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dropDatabase = function (databaseName) {
+    return this.pool.json(this.getQueryOpts({
+        q: &#x22;drop database &#x22; + grammar.escape.quoted(databaseName),
+    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.dropMeasurement" id="apidoc.element.influx.InfluxDB.prototype.dropMeasurement">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>dropMeasurement
+        <span class="apidocSignatureSpan">(measurement, database)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dropMeasurement = function (measurement, database) {
+    if (database === void 0) { database = this.defaultDB(); }
+    return this.pool.json(this.getQueryOpts({
+        db: database,
+        q: &#x22;drop measurement &#x22; + grammar.escape.quoted(measurement),
+    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.dropRetentionPolicy" id="apidoc.element.influx.InfluxDB.prototype.dropRetentionPolicy">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>dropRetentionPolicy
+        <span class="apidocSignatureSpan">(name, database)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dropRetentionPolicy = function (name, database) {
+    if (database === void 0) { database = this.defaultDB(); }
+    return this.pool.json(this.getQueryOpts({
+        q: &#x22;drop retention policy &#x22; + grammar.escape.quoted(name) + &#x22; &#x22;
+            + (&#x22;on &#x22; + grammar.escape.quoted(database)),
+    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.dropSeries" id="apidoc.element.influx.InfluxDB.prototype.dropSeries">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>dropSeries
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dropSeries = function (options) {
+    var db = &#x27;database&#x27; in options ? options.database : this.defaultDB();
+    var q = &#x27;drop series&#x27;;
+    if (&#x27;measurement&#x27; in options) {
+        q += &#x27; from &#x27; + b.parseMeasurement(options);
+    }
+    if (&#x27;where&#x27; in options) {
+        q += &#x27; where &#x27; + b.parseWhere(options);
+    }
+    return this.pool.json(this.getQueryOpts({ db: db, q: q }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.dropUser" id="apidoc.element.influx.InfluxDB.prototype.dropUser">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>dropUser
+        <span class="apidocSignatureSpan">(username)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dropUser = function (username) {
+    return this.pool.json(this.getQueryOpts({
+        q: &#x22;drop user &#x22; + grammar.escape.quoted(username),
+    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.getDatabaseNames" id="apidoc.element.influx.InfluxDB.prototype.getDatabaseNames">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>getDatabaseNames
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDatabaseNames = function () {
+    return this.pool.json(this.getQueryOpts({ q: &#x27;show databases&#x27; }))
+        .then(function (res) { return results_1.parseSingle(res).map(function (r) { return r.name; }); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.getMeasurements" id="apidoc.element.influx.InfluxDB.prototype.getMeasurements">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>getMeasurements
+        <span class="apidocSignatureSpan">(database)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMeasurements = function (database) {
+    if (database === void 0) { database = this.defaultDB(); }
+    return this.pool.json(this.getQueryOpts({
+        db: database,
+        q: &#x27;show measurements&#x27;,
+    })).then(function (res) { return results_1.parseSingle(res).map(function (r) { return r.name; }); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.getQueryOpts" id="apidoc.element.influx.InfluxDB.prototype.getQueryOpts">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>getQueryOpts
+        <span class="apidocSignatureSpan">(params, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getQueryOpts = function (params, method) {
+    if (method === void 0) { method = &#x27;GET&#x27;; }
+    return {
+        method: method,
+        path: &#x27;/query&#x27;,
+        query: Object.assign({
+            p: this.options.password,
+            u: this.options.username,
+        }, params),
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.getSeries" id="apidoc.element.influx.InfluxDB.prototype.getSeries">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>getSeries
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSeries = function (options) {
+    if (options === void 0) { options = {}; }
+    var _a = options.database, database = _a === void 0 ? this.defaultDB() : _a, measurement = options.measurement;
+    var query = &#x27;show series&#x27;;
+    if (measurement) {
+        query += &#x22; from &#x22; + grammar.escape.quoted(measurement);
+    }
+    return this.pool.json(this.getQueryOpts({
+        db: database,
+        q: query,
+    })).then(function (res) { return results_1.parseSingle(res).map(function (r) { return r.key; }); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.getUsers" id="apidoc.element.influx.InfluxDB.prototype.getUsers">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>getUsers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUsers = function () {
+    return this.pool.json(this.getQueryOpts({ q: &#x27;show users&#x27; })).then(results_1.parseSingle);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.grantAdminPrivilege" id="apidoc.element.influx.InfluxDB.prototype.grantAdminPrivilege">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>grantAdminPrivilege
+        <span class="apidocSignatureSpan">(username)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grantAdminPrivilege = function (username) {
+    return this.pool.json(this.getQueryOpts({
+        q: &#x22;grant all to &#x22; + grammar.escape.quoted(username),
+    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.grantPrivilege" id="apidoc.element.influx.InfluxDB.prototype.grantPrivilege">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>grantPrivilege
+        <span class="apidocSignatureSpan">(username, privilege, database)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grantPrivilege = function (username, privilege, database) {
+    if (database === void 0) { database = this.defaultDB(); }
+    return this.pool.json(this.getQueryOpts({
+        q: &#x22;grant &#x22; + privilege + &#x22; on &#x22; + grammar.escape.quoted(database) + &#x22; &#x22;
+            + (&#x22;to &#x22; + grammar.escape.quoted(username)),
+    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.ping" id="apidoc.element.influx.InfluxDB.prototype.ping">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>ping
+        <span class="apidocSignatureSpan">(timeout)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ping = function (timeout) {
+    return this.pool.ping(timeout);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.query" id="apidoc.element.influx.InfluxDB.prototype.query">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>query
+        <span class="apidocSignatureSpan">(query, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">query = function (query, options) {
+    if (options === void 0) { options = {}; }
+    if (Array.isArray(query)) {
+        query = query.join(&#x27;;&#x27;);
+    }
+    // If the consumer asked explicitly for nanosecond precision parsing,
+    // remove that to cause Influx to give us ISO dates that
+    // we can parse correctly.
+    if (options.precision === &#x27;n&#x27;) {
+        options = Object.assign({}, options); // avoid mutating
+        delete options.precision;
+    }
+    return this.queryRaw(query, options).then(function (res) { return results_1.parse(res, options.precision); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.queryRaw" id="apidoc.element.influx.InfluxDB.prototype.queryRaw">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>queryRaw
+        <span class="apidocSignatureSpan">(query, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">queryRaw = function (query, options) {
+    if (options === void 0) { options = {}; }
+    var _a = options.database, database = _a === void 0 ? this.defaultDB() : _a, retentionPolicy = options.retentionPolicy;
+    if (query instanceof Array) {
+        query = query.join(&#x27;;&#x27;);
+    }
+    return this.pool.json(this.getQueryOpts({
+        db: database,
+        epoch: options.precision,
+        q: query,
+        rp: retentionPolicy,
+    }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.revokeAdminPrivilege" id="apidoc.element.influx.InfluxDB.prototype.revokeAdminPrivilege">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>revokeAdminPrivilege
+        <span class="apidocSignatureSpan">(username)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">revokeAdminPrivilege = function (username) {
+    return this.pool.json(this.getQueryOpts({
+        q: &#x22;revoke all from &#x22; + grammar.escape.quoted(username),
+    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.revokePrivilege" id="apidoc.element.influx.InfluxDB.prototype.revokePrivilege">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>revokePrivilege
+        <span class="apidocSignatureSpan">(username, privilege, database)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">revokePrivilege = function (username, privilege, database) {
+    if (database === void 0) { database = this.defaultDB(); }
+    return this.pool.json(this.getQueryOpts({
+        q: &#x22;revoke &#x22; + privilege + &#x22; from &#x22; + grammar.escape.quoted(username) + &#x22; on &#x22;
+            + grammar.escape.quoted(database),
+    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.setPassword" id="apidoc.element.influx.InfluxDB.prototype.setPassword">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>setPassword
+        <span class="apidocSignatureSpan">(username, password)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setPassword = function (username, password) {
+    return this.pool.json(this.getQueryOpts({
+        q: &#x22;set password for &#x22; + grammar.escape.quoted(username) + &#x22; = &#x22;
+            + grammar.escape.stringLit(password),
+    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.showContinousQueries" id="apidoc.element.influx.InfluxDB.prototype.showContinousQueries">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>showContinousQueries
+        <span class="apidocSignatureSpan">(database)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">showContinousQueries = function (database) {
+    if (database === void 0) { database = this.defaultDB(); }
+    return this.pool.json(this.getQueryOpts({
+        db: database,
+        q: &#x27;show continuous queries&#x27;,
+    })).then(results_1.parseSingle);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.showRetentionPolicies" id="apidoc.element.influx.InfluxDB.prototype.showRetentionPolicies">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>showRetentionPolicies
+        <span class="apidocSignatureSpan">(database)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">showRetentionPolicies = function (database) {
+    if (database === void 0) { database = this.defaultDB(); }
+    return this.pool.json(this.getQueryOpts({
+        q: &#x22;show retention policies on &#x22; + grammar.escape.quoted(database),
+    }, &#x27;GET&#x27;)).then(results_1.parseSingle);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.writeMeasurement" id="apidoc.element.influx.InfluxDB.prototype.writeMeasurement">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>writeMeasurement
+        <span class="apidocSignatureSpan">(measurement, points, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeMeasurement = function (measurement, points, options) {
+    if (options === void 0) { options = {}; }
+    points = points.map(function (p) { return Object.assign({ measurement: measurement }, p); });
+    return this.writePoints(points, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.InfluxDB.prototype.writePoints" id="apidoc.element.influx.InfluxDB.prototype.writePoints">
+        function <span class="apidocSignatureSpan">influx.InfluxDB.prototype.</span>writePoints
+        <span class="apidocSignatureSpan">(points, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writePoints = function (points, options) {
+    var _this = this;
+    if (options === void 0) { options = {}; }
+    var _a = options.database, database = _a === void 0 ? this.defaultDB() : _a, _b = options.precision, precision = _b === void
+ 0 ? &#x27;n&#x27; : _b, retentionPolicy = options.retentionPolicy;
+    var payload = &#x27;&#x27;;
+    points.forEach(function (point) {
+        var _a = point.fields, fields = _a === void 0 ? {} : _a, _b = point.tags, tags = _b === void 0 ? {} : _b, measurement =
+point.measurement, timestamp = point.timestamp;
+        var schema = _this.schema[database] &#x26;&#x26; _this.schema[database][measurement];
+        var fieldsPairs = schema ? schema.coerceFields(fields) : schema_1.coerceBadly(fields);
+        var tagsNames = schema ? schema.checkTags(tags) : Object.keys(tags);
+        payload += (payload.length &#x3e; 0 ? &#x27;\n&#x27; : &#x27;&#x27;) + measurement;
+        for (var i = 0; i &#x3c; tagsNames.length; i += 1) {
+            payload += &#x27;,&#x27;
+                + grammar.escape.tag(tagsNames[i])
+                + &#x27;=&#x27;
+                + grammar.escape.tag(tags[tagsNames[i]]);
+        }
+        for (var i = 0; i &#x3c; fieldsPairs.length; i += 1) {
+            payload += (i === 0 ? &#x27; &#x27; : &#x27;,&#x27;)
+                + grammar.escape.tag(fieldsPairs[i][0])
+                + &#x27;=&#x27;
+                + fieldsPairs[i][1];
+        }
+        if (timestamp !== undefined) {
+            payload += &#x27; &#x27; + grammar.castTimestamp(timestamp, precision);
+        }
+    });
+    return this.pool.discard({
+        body: payload,
+        method: &#x27;POST&#x27;,
+        path: &#x27;/write&#x27;,
+        query: Object.assign({
+            db: database,
+            p: this.options.password,
+            precision: precision,
+            rp: retentionPolicy,
+            u: this.options.username,
+        }),
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.Measurement" id="apidoc.module.influx.Measurement">module influx.Measurement</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Measurement.Measurement" id="apidoc.element.influx.Measurement.Measurement">
+        function <span class="apidocSignatureSpan">influx.</span>Measurement
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Measurement() {
+    this.parts = [null, null, null];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.Measurement.prototype" id="apidoc.module.influx.Measurement.prototype">module influx.Measurement.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Measurement.prototype.db" id="apidoc.element.influx.Measurement.prototype.db">
+        function <span class="apidocSignatureSpan">influx.Measurement.prototype.</span>db
+        <span class="apidocSignatureSpan">(db)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">db = function (db) {
+    this.parts[0] = db;
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Measurement.prototype.name" id="apidoc.element.influx.Measurement.prototype.name">
+        function <span class="apidocSignatureSpan">influx.Measurement.prototype.</span>name
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">name = function (name) {
+    this.parts[2] = name;
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Measurement.prototype.policy" id="apidoc.element.influx.Measurement.prototype.policy">
+        function <span class="apidocSignatureSpan">influx.Measurement.prototype.</span>policy
+        <span class="apidocSignatureSpan">(retentionPolicy)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">policy = function (retentionPolicy) {
+    this.parts[1] = retentionPolicy;
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Measurement.prototype.toString" id="apidoc.element.influx.Measurement.prototype.toString">
+        function <span class="apidocSignatureSpan">influx.Measurement.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    if (!this.parts[2]) {
+        throw new Error(&#x22;You must specify a measurement name to query! Got `&#x22; + this.parts[2] + &#x22;`&#x22;);
+    }
+    return this.parts.filter(function (p) { return !!p; })
+        .map(function (p) { return grammar_1.escape.quoted(p); })
+        .join(&#x27;.&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.Raw" id="apidoc.module.influx.Raw">module influx.Raw</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Raw.Raw" id="apidoc.element.influx.Raw.Raw">
+        function <span class="apidocSignatureSpan">influx.</span>Raw
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Raw(value) {
+    this.value = value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.Raw.prototype" id="apidoc.module.influx.Raw.prototype">module influx.Raw.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.Raw.prototype.getValue" id="apidoc.element.influx.Raw.prototype.getValue">
+        function <span class="apidocSignatureSpan">influx.Raw.prototype.</span>getValue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getValue = function () {
+    return this.value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.ResultError" id="apidoc.module.influx.ResultError">module influx.ResultError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.ResultError.ResultError" id="apidoc.element.influx.ResultError.ResultError">
+        function <span class="apidocSignatureSpan">influx.</span>ResultError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ResultError(message) {
+    var _this = _super.call(this) || this;
+    _this.message = &#x22;Error from InfluxDB: &#x22; + message;
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.ResultError.prototype" id="apidoc.module.influx.ResultError.prototype">module influx.ResultError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.ResultError.prototype.constructor" id="apidoc.element.influx.ResultError.prototype.constructor">
+        function <span class="apidocSignatureSpan">influx.ResultError.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ResultError(message) {
+    var _this = _super.call(this) || this;
+    _this.message = &#x22;Error from InfluxDB: &#x22; + message;
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.escape" id="apidoc.module.influx.escape">module influx.escape</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.escape.measurement" id="apidoc.element.influx.escape.measurement">
+        function <span class="apidocSignatureSpan">influx.escape.</span>measurement
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">measurement = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.escape.quoted" id="apidoc.element.influx.escape.quoted">
+        function <span class="apidocSignatureSpan">influx.escape.</span>quoted
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">quoted = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.escape.stringLit" id="apidoc.element.influx.escape.stringLit">
+        function <span class="apidocSignatureSpan">influx.escape.</span>stringLit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringLit = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.escape.tag" id="apidoc.element.influx.escape.tag">
+        function <span class="apidocSignatureSpan">influx.escape.</span>tag
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tag = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
