@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/node-influx/node-influx#readme"
-
-    >influx (v5.0.7)</a>
+    <a href="https://github.com/node-influx/node-influx#readme">influx (v5.0.7)</a>
 </h1>
 <h4>InfluxDB Client</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.influx">module influx</a><ol>
 
@@ -1085,13 +1078,13 @@
      */
     this.schema = Object.create(null);
     // Figure out how to parse whatever we were passed in into a IClusterConfig.
-    if (typeof options === &#x27;string&#x27;) {
+    if (typeof options === 'string') {
         options = parseOptionsUrl(options);
     }
     else if (!options) {
         options = defaultHost;
     }
-    if (!options.hasOwnProperty(&#x27;hosts&#x27;)) {
+    if (!options.hasOwnProperty('hosts')) {
         options = {
             database: options.database,
             hosts: [options],
@@ -1113,13 +1106,13 @@
     this.pool = new pool_1.Pool(resolved.pool);
     this.options = defaults(resolved, defaultOptions);
     resolved.hosts.forEach(function (host) {
-        _this.pool.addHost(host.protocol + &#x22;://&#x22; + host.host + &#x22;:&#x22; + host.port, host.options);
+        _this.pool.addHost(host.protocol + "://" + host.host + ":" + host.port, host.options);
     });
     this.options.schema.forEach(function (schema) {
         var db = schema.database = schema.database || _this.options.database;
         if (!db) {
-            throw new Error(&#x22;Schema &#x22; + schema.measurement + &#x22; doesn&#x27;t have a database specified,&#x22; +
-                &#x27;and no default database is provided!&#x27;);
+            throw new Error("Schema " + schema.measurement + " doesn't have a database specified," +
+                'and no default database is provided!');
         }
         if (!_this.schema[db]) {
             _this.schema[db] = Object.create(null);
@@ -1165,14 +1158,14 @@ exports.isNumeric = isNumeric;
  * your provided string.
  * @class
  * @example
- * influx.createDatabase(new Influx.<span class="apidocCodeKeywordSpan">Raw</span>(&#x27;This won\&#x27;t be escaped!&#x27;));
+ * influx.createDatabase(new Influx.<span class="apidocCodeKeywordSpan">Raw</span>('This won\'t be escaped!'));
  */
 var Raw = (function () {
 /**
  * Wraps a string so that it is not escaped in Influx queries.
  * @param {String} value
  * @example
- * influx.createDatabase(new Influx.Raw(&#x27;This won\&#x27;t be escaped!&#x27;));
+ * influx.createDatabase(new Influx.Raw('This won\'t be escaped!'));
 ...</pre></li>
     </ul>
 
@@ -1187,7 +1180,7 @@ var Raw = (function () {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function ResultError(message) {
     var _this = _super.call(this) || this;
-    _this.message = &#x22;Error from InfluxDB: &#x22; + message;
+    _this.message = "Error from InfluxDB: " + message;
     return _this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1203,7 +1196,7 @@ var Raw = (function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function parseMeasurement(q) {
-    if (typeof q.measurement === &#x27;function&#x27;) {
+    if (typeof q.measurement === 'function') {
         return q.measurement(new Measurement()).toString();
     }
     return q.measurement;
@@ -1221,7 +1214,7 @@ var Raw = (function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function parseWhere(q) {
-    if (typeof q.where === &#x27;function&#x27;) {
+    if (typeof q.where === 'function') {
         return q.where(new Expression()).toString();
     }
     return q.where;
@@ -1317,7 +1310,7 @@ var Raw = (function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">exp = function (fn) {
-    this.query.push(&#x27;(&#x27; + fn(new Expression()).toString() + &#x27;)&#x27;);
+    this.query.push('(' + fn(new Expression()).toString() + ')');
     return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1343,15 +1336,15 @@ var Raw = (function () {
 * untrusted input.
 *
 * @example
-* e =&#x3e; e
-*   .<span class="apidocCodeKeywordSpan">field</span>(&#x27;host&#x27;).equals.value(&#x27;ares.peet.io&#x27;)
+* e =&gt; e
+*   .<span class="apidocCodeKeywordSpan">field</span>('host').equals.value('ares.peet.io')
 *   .or
-*   .field(&#x27;host&#x27;).matches(/example\.com$/)
+*   .field('host').matches(/example\.com$/)
 *   .or
-*   .expr(e =&#x3e; e
-*     .field(&#x27;country&#x27;).equals.value(&#x27;US&#x27;)
+*   .expr(e =&gt; e
+*     .field('country').equals.value('US')
 *     .and
-*     .field(&#x27;state&#x27;).equals.value(&#x27;WA&#x27;));
+*     .field('state').equals.value('WA'));
 ...</pre></li>
     </ul>
 
@@ -1372,17 +1365,17 @@ var Raw = (function () {
  *     and field keys on the line protocol.
  *
  * @example
- * console.log(escape.quoted(&#x27;my_&#x22;db&#x27;)); // =&#x3e; &#x22;my_\&#x22;db&#x22;
- * console.log(escape.stringLit(&#x27;hello\&#x27;world&#x27;)); // =&#x3e; &#x27;hello\&#x27;world&#x27;
+ * console.log(escape.quoted('my_"db')); // =&gt; "my_\"db"
+ * console.log(escape.stringLit('hello\'world')); // =&gt; 'hello\'world'
  *
- * console.log(escape.measurement(&#x27;my measurement&#x27;)); // =&#x3e; my\ measurement
- * console.log(escape.<span class="apidocCodeKeywordSpan">tag</span>(&#x27;my tag=&#x27;)); // =&#x3e; my\ tag\=
+ * console.log(escape.measurement('my measurement')); // =&gt; my\ measurement
+ * console.log(escape.<span class="apidocCodeKeywordSpan">tag</span>('my tag=')); // =&gt; my\ tag\=
  */
 exports.escape = {
 /**
  * measurement escapes measurement names.
  */
-measurement: bindEsc(new Escaper([&#x27;,&#x27;, &#x27; &#x27;])),
+measurement: bindEsc(new Escaper([',', ' '])),
 /**
 ...</pre></li>
     </ul>
@@ -1397,15 +1390,15 @@ measurement: bindEsc(new Escaper([&#x27;,&#x27;, &#x27; &#x27;])),
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return this.query.join(&#x27; &#x27;);
+    return this.query.join(' ');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-&#x22;use strict&#x22;;
-Object.defineProperty(exports, &#x22;__esModule&#x22;, { value: true });
-var grammar_1 = require(&#x22;./grammar&#x22;);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var grammar_1 = require("./grammar");
 function regexHasFlags(re) {
-   if (typeof re.flags !== &#x27;undefined&#x27;) {
-       return re.flags.length &#x3e; 0;
+   if (typeof re.flags !== 'undefined') {
+       return re.flags.length &gt; 0;
    }
    return !(/\/$/).test(re.<span class="apidocCodeKeywordSpan">toString</span>());
 }
@@ -1429,14 +1422,14 @@ function regexHasFlags(re) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">value = function (value) {
     switch (typeof value) {
-        case &#x27;number&#x27;:
+        case 'number':
             this.query.push(value);
             return this;
-        case &#x27;string&#x27;:
+        case 'string':
             this.query.push(grammar_1.escape.stringLit(value));
             return this;
-        case &#x27;boolean&#x27;:
-            this.query.push(value ? &#x27;TRUE&#x27; : &#x27;FALSE&#x27;);
+        case 'boolean':
+            this.query.push(value ? 'TRUE' : 'FALSE');
             return this;
         default:
             if (value instanceof Date) {
@@ -1445,18 +1438,18 @@ function regexHasFlags(re) {
             }
             if (value instanceof RegExp) {
                 if (regexHasFlags(value)) {
-                    throw new Error(&#x27;Attempted to query using a regex with flags, &#x27; +
-                        &#x27;but Influx doesn\&#x27;t support flags in queries.&#x27;);
+                    throw new Error('Attempted to query using a regex with flags, ' +
+                        'but Influx doesn\'t support flags in queries.');
                 }
-                this.query.push(&#x27;/&#x27; + value.source + &#x27;/&#x27;);
+                this.query.push('/' + value.source + '/');
                 return this;
             }
-            if (value &#x26;&#x26; typeof value.toString === &#x27;function&#x27;) {
+            if (value &amp;&amp; typeof value.toString === 'function') {
                 this.query.push(value.toString());
                 return this;
             }
-            throw new Error(&#x22;node-influx doesn&#x27;t know how to encode the provided value into a &#x22; +
-                &#x27;query. If you think this is a bug, open an issue here: https://git.io/influx-err&#x27;);
+            throw new Error("node-influx doesn't know how to encode the provided value into a " +
+                'query. If you think this is a bug, open an issue here: https://git.io/influx-err');
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -1466,15 +1459,15 @@ function regexHasFlags(re) {
 * untrusted input.
 *
 * @example
-* e =&#x3e; e
-*   .field(&#x27;host&#x27;).equals.<span class="apidocCodeKeywordSpan">value</span>(&#x27;ares.peet.io&#x27;)
+* e =&gt; e
+*   .field('host').equals.<span class="apidocCodeKeywordSpan">value</span>('ares.peet.io')
 *   .or
-*   .field(&#x27;host&#x27;).matches(/example\.com$/)
+*   .field('host').matches(/example\.com$/)
 *   .or
-*   .expr(e =&#x3e; e
-*     .field(&#x27;country&#x27;).equals.value(&#x27;US&#x27;)
+*   .expr(e =&gt; e
+*     .field('country').equals.value('US')
 *     .and
-*     .field(&#x27;state&#x27;).equals.value(&#x27;WA&#x27;));
+*     .field('state').equals.value('WA'));
 ...</pre></li>
     </ul>
 
@@ -1500,13 +1493,13 @@ function regexHasFlags(re) {
      */
     this.schema = Object.create(null);
     // Figure out how to parse whatever we were passed in into a IClusterConfig.
-    if (typeof options === &#x27;string&#x27;) {
+    if (typeof options === 'string') {
         options = parseOptionsUrl(options);
     }
     else if (!options) {
         options = defaultHost;
     }
-    if (!options.hasOwnProperty(&#x27;hosts&#x27;)) {
+    if (!options.hasOwnProperty('hosts')) {
         options = {
             database: options.database,
             hosts: [options],
@@ -1528,13 +1521,13 @@ function regexHasFlags(re) {
     this.pool = new pool_1.Pool(resolved.pool);
     this.options = defaults(resolved, defaultOptions);
     resolved.hosts.forEach(function (host) {
-        _this.pool.addHost(host.protocol + &#x22;://&#x22; + host.host + &#x22;:&#x22; + host.port, host.options);
+        _this.pool.addHost(host.protocol + "://" + host.host + ":" + host.port, host.options);
     });
     this.options.schema.forEach(function (schema) {
         var db = schema.database = schema.database || _this.options.database;
         if (!db) {
-            throw new Error(&#x22;Schema &#x22; + schema.measurement + &#x22; doesn&#x27;t have a database specified,&#x22; +
-                &#x27;and no default database is provided!&#x27;);
+            throw new Error("Schema " + schema.measurement + " doesn't have a database specified," +
+                'and no default database is provided!');
         }
         if (!_this.schema[db]) {
             _this.schema[db] = Object.create(null);
@@ -1560,11 +1553,11 @@ function regexHasFlags(re) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">alterRetentionPolicy = function (name, options) {
-    var q = &#x22;alter retention policy &#x22; + grammar.escape.quoted(name) + &#x22; on &#x22;
+    var q = "alter retention policy " + grammar.escape.quoted(name) + " on "
         + grammar.escape.quoted(options.database || this.defaultDB())
-        + (&#x22; duration &#x22; + options.duration + &#x22; replication &#x22; + options.replication)
-        + (options.isDefault ? &#x27; default&#x27; : &#x27;&#x27;);
-    return this.pool.json(this.getQueryOpts({ q: q }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+        + (" duration " + options.duration + " replication " + options.replication)
+        + (options.isDefault ? ' default' : '');
+    return this.pool.json(this.getQueryOpts({ q: q }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1581,9 +1574,9 @@ function regexHasFlags(re) {
     <li>description and source-code<pre class="apidocCodePre">createContinuousQuery = function (name, query, database) {
     if (database === void 0) { database = this.defaultDB(); }
     return this.pool.json(this.getQueryOpts({
-        q: &#x22;create continuous query &#x22; + grammar.escape.quoted(name)
-            + (&#x22; on &#x22; + grammar.escape.quoted(database) + &#x22; begin &#x22; + query + &#x22; end&#x22;),
-    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+        q: "create continuous query " + grammar.escape.quoted(name)
+            + (" on " + grammar.escape.quoted(database) + " begin " + query + " end"),
+    }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1599,8 +1592,8 @@ function regexHasFlags(re) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">createDatabase = function (databaseName) {
     return this.pool.json(this.getQueryOpts({
-        q: &#x22;create database &#x22; + grammar.escape.quoted(databaseName),
-    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+        q: "create database " + grammar.escape.quoted(databaseName),
+    }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 }
@@ -1610,14 +1603,14 @@ exports.isNumeric = isNumeric;
  * your provided string.
  * @class
  * @example
- * influx.<span class="apidocCodeKeywordSpan">createDatabase</span>(new Influx.Raw(&#x27;This won\&#x27;t be escaped!&#x27;));
+ * influx.<span class="apidocCodeKeywordSpan">createDatabase</span>(new Influx.Raw('This won\'t be escaped!'));
  */
 var Raw = (function () {
 /**
  * Wraps a string so that it is not escaped in Influx queries.
  * @param {String} value
  * @example
- * influx.createDatabase(new Influx.Raw(&#x27;This won\&#x27;t be escaped!&#x27;));
+ * influx.createDatabase(new Influx.Raw('This won\'t be escaped!'));
 ...</pre></li>
     </ul>
 
@@ -1631,11 +1624,11 @@ var Raw = (function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">createRetentionPolicy = function (name, options) {
-    var q = &#x22;create retention policy &#x22; + grammar.escape.quoted(name) + &#x22; on &#x22;
+    var q = "create retention policy " + grammar.escape.quoted(name) + " on "
         + grammar.escape.quoted(options.database || this.defaultDB())
-        + (&#x22; duration &#x22; + options.duration + &#x22; replication &#x22; + options.replication)
-        + (options.isDefault ? &#x27; default&#x27; : &#x27;&#x27;);
-    return this.pool.json(this.getQueryOpts({ q: q }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+        + (" duration " + options.duration + " replication " + options.replication)
+        + (options.isDefault ? ' default' : '');
+    return this.pool.json(this.getQueryOpts({ q: q }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1652,10 +1645,10 @@ var Raw = (function () {
     <li>description and source-code<pre class="apidocCodePre">createUser = function (username, password, admin) {
     if (admin === void 0) { admin = false; }
     return this.pool.json(this.getQueryOpts({
-        q: &#x22;create user &#x22; + grammar.escape.quoted(username) + &#x22; with password &#x22;
+        q: "create user " + grammar.escape.quoted(username) + " with password "
             + grammar.escape.stringLit(password)
-            + (admin ? &#x27; with all privileges&#x27; : &#x27;&#x27;),
-    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+            + (admin ? ' with all privileges' : ''),
+    }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1671,8 +1664,8 @@ var Raw = (function () {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">defaultDB = function () {
     if (!this.options.database) {
-        throw new Error(&#x27;Attempted to run an influx query without a default&#x27;
-            + &#x27; database specified or an explicit database provided.&#x27;);
+        throw new Error('Attempted to run an influx query without a default'
+            + ' database specified or an explicit database provided.');
     }
     return this.options.database;
 }</pre></li>
@@ -1691,9 +1684,9 @@ var Raw = (function () {
     <li>description and source-code<pre class="apidocCodePre">dropContinuousQuery = function (name, database) {
     if (database === void 0) { database = this.defaultDB(); }
     return this.pool.json(this.getQueryOpts({
-        q: &#x22;drop continuous query &#x22; + grammar.escape.quoted(name)
-            + (&#x22; on &#x22; + grammar.escape.quoted(database)),
-    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+        q: "drop continuous query " + grammar.escape.quoted(name)
+            + (" on " + grammar.escape.quoted(database)),
+    }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1709,8 +1702,8 @@ var Raw = (function () {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">dropDatabase = function (databaseName) {
     return this.pool.json(this.getQueryOpts({
-        q: &#x22;drop database &#x22; + grammar.escape.quoted(databaseName),
-    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+        q: "drop database " + grammar.escape.quoted(databaseName),
+    }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1728,8 +1721,8 @@ var Raw = (function () {
     if (database === void 0) { database = this.defaultDB(); }
     return this.pool.json(this.getQueryOpts({
         db: database,
-        q: &#x22;drop measurement &#x22; + grammar.escape.quoted(measurement),
-    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+        q: "drop measurement " + grammar.escape.quoted(measurement),
+    }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1746,9 +1739,9 @@ var Raw = (function () {
     <li>description and source-code<pre class="apidocCodePre">dropRetentionPolicy = function (name, database) {
     if (database === void 0) { database = this.defaultDB(); }
     return this.pool.json(this.getQueryOpts({
-        q: &#x22;drop retention policy &#x22; + grammar.escape.quoted(name) + &#x22; &#x22;
-            + (&#x22;on &#x22; + grammar.escape.quoted(database)),
-    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+        q: "drop retention policy " + grammar.escape.quoted(name) + " "
+            + ("on " + grammar.escape.quoted(database)),
+    }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1763,15 +1756,15 @@ var Raw = (function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">dropSeries = function (options) {
-    var db = &#x27;database&#x27; in options ? options.database : this.defaultDB();
-    var q = &#x27;drop series&#x27;;
-    if (&#x27;measurement&#x27; in options) {
-        q += &#x27; from &#x27; + b.parseMeasurement(options);
+    var db = 'database' in options ? options.database : this.defaultDB();
+    var q = 'drop series';
+    if ('measurement' in options) {
+        q += ' from ' + b.parseMeasurement(options);
     }
-    if (&#x27;where&#x27; in options) {
-        q += &#x27; where &#x27; + b.parseWhere(options);
+    if ('where' in options) {
+        q += ' where ' + b.parseWhere(options);
     }
-    return this.pool.json(this.getQueryOpts({ db: db, q: q }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+    return this.pool.json(this.getQueryOpts({ db: db, q: q }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1787,8 +1780,8 @@ var Raw = (function () {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">dropUser = function (username) {
     return this.pool.json(this.getQueryOpts({
-        q: &#x22;drop user &#x22; + grammar.escape.quoted(username),
-    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+        q: "drop user " + grammar.escape.quoted(username),
+    }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1803,7 +1796,7 @@ var Raw = (function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getDatabaseNames = function () {
-    return this.pool.json(this.getQueryOpts({ q: &#x27;show databases&#x27; }))
+    return this.pool.json(this.getQueryOpts({ q: 'show databases' }))
         .then(function (res) { return results_1.parseSingle(res).map(function (r) { return r.name; }); });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1822,7 +1815,7 @@ var Raw = (function () {
     if (database === void 0) { database = this.defaultDB(); }
     return this.pool.json(this.getQueryOpts({
         db: database,
-        q: &#x27;show measurements&#x27;,
+        q: 'show measurements',
     })).then(function (res) { return results_1.parseSingle(res).map(function (r) { return r.name; }); });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1838,10 +1831,10 @@ var Raw = (function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getQueryOpts = function (params, method) {
-    if (method === void 0) { method = &#x27;GET&#x27;; }
+    if (method === void 0) { method = 'GET'; }
     return {
         method: method,
-        path: &#x27;/query&#x27;,
+        path: '/query',
         query: Object.assign({
             p: this.options.password,
             u: this.options.username,
@@ -1863,9 +1856,9 @@ var Raw = (function () {
     <li>description and source-code<pre class="apidocCodePre">getSeries = function (options) {
     if (options === void 0) { options = {}; }
     var _a = options.database, database = _a === void 0 ? this.defaultDB() : _a, measurement = options.measurement;
-    var query = &#x27;show series&#x27;;
+    var query = 'show series';
     if (measurement) {
-        query += &#x22; from &#x22; + grammar.escape.quoted(measurement);
+        query += " from " + grammar.escape.quoted(measurement);
     }
     return this.pool.json(this.getQueryOpts({
         db: database,
@@ -1885,7 +1878,7 @@ var Raw = (function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getUsers = function () {
-    return this.pool.json(this.getQueryOpts({ q: &#x27;show users&#x27; })).then(results_1.parseSingle);
+    return this.pool.json(this.getQueryOpts({ q: 'show users' })).then(results_1.parseSingle);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1901,8 +1894,8 @@ var Raw = (function () {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">grantAdminPrivilege = function (username) {
     return this.pool.json(this.getQueryOpts({
-        q: &#x22;grant all to &#x22; + grammar.escape.quoted(username),
-    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+        q: "grant all to " + grammar.escape.quoted(username),
+    }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1919,9 +1912,9 @@ var Raw = (function () {
     <li>description and source-code<pre class="apidocCodePre">grantPrivilege = function (username, privilege, database) {
     if (database === void 0) { database = this.defaultDB(); }
     return this.pool.json(this.getQueryOpts({
-        q: &#x22;grant &#x22; + privilege + &#x22; on &#x22; + grammar.escape.quoted(database) + &#x22; &#x22;
-            + (&#x22;to &#x22; + grammar.escape.quoted(username)),
-    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+        q: "grant " + privilege + " on " + grammar.escape.quoted(database) + " "
+            + ("to " + grammar.escape.quoted(username)),
+    }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1953,12 +1946,12 @@ var Raw = (function () {
     <li>description and source-code<pre class="apidocCodePre">query = function (query, options) {
     if (options === void 0) { options = {}; }
     if (Array.isArray(query)) {
-        query = query.join(&#x27;;&#x27;);
+        query = query.join(';');
     }
     // If the consumer asked explicitly for nanosecond precision parsing,
     // remove that to cause Influx to give us ISO dates that
     // we can parse correctly.
-    if (options.precision === &#x27;n&#x27;) {
+    if (options.precision === 'n') {
         options = Object.assign({}, options); // avoid mutating
         delete options.precision;
     }
@@ -1980,7 +1973,7 @@ var Raw = (function () {
     if (options === void 0) { options = {}; }
     var _a = options.database, database = _a === void 0 ? this.defaultDB() : _a, retentionPolicy = options.retentionPolicy;
     if (query instanceof Array) {
-        query = query.join(&#x27;;&#x27;);
+        query = query.join(';');
     }
     return this.pool.json(this.getQueryOpts({
         db: database,
@@ -2003,8 +1996,8 @@ var Raw = (function () {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">revokeAdminPrivilege = function (username) {
     return this.pool.json(this.getQueryOpts({
-        q: &#x22;revoke all from &#x22; + grammar.escape.quoted(username),
-    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+        q: "revoke all from " + grammar.escape.quoted(username),
+    }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2021,9 +2014,9 @@ var Raw = (function () {
     <li>description and source-code<pre class="apidocCodePre">revokePrivilege = function (username, privilege, database) {
     if (database === void 0) { database = this.defaultDB(); }
     return this.pool.json(this.getQueryOpts({
-        q: &#x22;revoke &#x22; + privilege + &#x22; on &#x22; + grammar.escape.quoted(database) + &#x22; from &#x22;
+        q: "revoke " + privilege + " on " + grammar.escape.quoted(database) + " from "
             + grammar.escape.quoted(username),
-    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+    }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2039,9 +2032,9 @@ var Raw = (function () {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setPassword = function (username, password) {
     return this.pool.json(this.getQueryOpts({
-        q: &#x22;set password for &#x22; + grammar.escape.quoted(username) + &#x22; = &#x22;
+        q: "set password for " + grammar.escape.quoted(username) + " = "
             + grammar.escape.stringLit(password),
-    }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
+    }, 'POST')).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2059,7 +2052,7 @@ var Raw = (function () {
     if (database === void 0) { database = this.defaultDB(); }
     return this.pool.json(this.getQueryOpts({
         db: database,
-        q: &#x27;show continuous queries&#x27;,
+        q: 'show continuous queries',
     })).then(results_1.parseSingle);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2077,8 +2070,8 @@ var Raw = (function () {
     <li>description and source-code<pre class="apidocCodePre">showRetentionPolicies = function (database) {
     if (database === void 0) { database = this.defaultDB(); }
     return this.pool.json(this.getQueryOpts({
-        q: &#x22;show retention policies on &#x22; + grammar.escape.quoted(database),
-    }, &#x27;GET&#x27;)).then(results_1.parseSingle);
+        q: "show retention policies on " + grammar.escape.quoted(database),
+    }, 'GET')).then(results_1.parseSingle);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2113,35 +2106,35 @@ var Raw = (function () {
     var _this = this;
     if (options === void 0) { options = {}; }
     var _a = options.database, database = _a === void 0 ? this.defaultDB() : _a, _b = options.precision, precision = _b === void
- 0 ? &#x27;n&#x27; : _b, retentionPolicy = options.retentionPolicy;
-    var payload = &#x27;&#x27;;
+ 0 ? 'n' : _b, retentionPolicy = options.retentionPolicy;
+    var payload = '';
     points.forEach(function (point) {
         var _a = point.fields, fields = _a === void 0 ? {} : _a, _b = point.tags, tags = _b === void 0 ? {} : _b, measurement =
 point.measurement, timestamp = point.timestamp;
-        var schema = _this.schema[database] &#x26;&#x26; _this.schema[database][measurement];
+        var schema = _this.schema[database] &amp;&amp; _this.schema[database][measurement];
         var fieldsPairs = schema ? schema.coerceFields(fields) : schema_1.coerceBadly(fields);
         var tagsNames = schema ? schema.checkTags(tags) : Object.keys(tags);
-        payload += (payload.length &#x3e; 0 ? &#x27;\n&#x27; : &#x27;&#x27;) + measurement;
-        for (var i = 0; i &#x3c; tagsNames.length; i += 1) {
-            payload += &#x27;,&#x27;
+        payload += (payload.length &gt; 0 ? '\n' : '') + measurement;
+        for (var i = 0; i &lt; tagsNames.length; i += 1) {
+            payload += ','
                 + grammar.escape.tag(tagsNames[i])
-                + &#x27;=&#x27;
+                + '='
                 + grammar.escape.tag(tags[tagsNames[i]]);
         }
-        for (var i = 0; i &#x3c; fieldsPairs.length; i += 1) {
-            payload += (i === 0 ? &#x27; &#x27; : &#x27;,&#x27;)
+        for (var i = 0; i &lt; fieldsPairs.length; i += 1) {
+            payload += (i === 0 ? ' ' : ',')
                 + grammar.escape.tag(fieldsPairs[i][0])
-                + &#x27;=&#x27;
+                + '='
                 + fieldsPairs[i][1];
         }
         if (timestamp !== undefined) {
-            payload += &#x27; &#x27; + grammar.castTimestamp(timestamp, precision);
+            payload += ' ' + grammar.castTimestamp(timestamp, precision);
         }
     });
     return this.pool.discard({
         body: payload,
-        method: &#x27;POST&#x27;,
-        path: &#x27;/write&#x27;,
+        method: 'POST',
+        path: '/write',
         query: Object.assign({
             db: database,
             p: this.options.password,
@@ -2198,10 +2191,10 @@ point.measurement, timestamp = point.timestamp;
  * policy and database it lives under.
  *
  * @example
- * m.name(&#x27;my_measurement&#x27;) // &#x22;my_measurement&#x22;
- * m.name(&#x27;my_measurement&#x27;).policy(&#x27;one_day&#x27;) // &#x22;one_day&#x22;.&#x22;my_measurement&#x22;
- * m.name(&#x27;my_measurement&#x27;).policy(&#x27;one_day&#x27;).<span class="apidocCodeKeywordSpan">db</span>(&#x27;mydb&#x27;) // &#
-x22;mydb&#x22;.one_day&#x22;.&#x22;my_measurement&#x22;
+ * m.name('my_measurement') // "my_measurement"
+ * m.name('my_measurement').policy('one_day') // "one_day"."my_measurement"
+ * m.name('my_measurement').policy('one_day').<span class="apidocCodeKeywordSpan">db</span>('mydb') // &amp;#
+x22;mydb".one_day"."my_measurement"
  */
 var Measurement = (function () {
 function Measurement() {
@@ -2233,10 +2226,10 @@ exports.Expression = Expression;
  * policy and database it lives under.
  *
  * @example
- * m.<span class="apidocCodeKeywordSpan">name</span>(&#x27;my_measurement&#x27;) // &#x22;my_measurement&#x22;
- * m.name(&#x27;my_measurement&#x27;).policy(&#x27;one_day&#x27;) // &#x22;one_day&#x22;.&#x22;my_measurement&#x22;
- * m.name(&#x27;my_measurement&#x27;).policy(&#x27;one_day&#x27;).db(&#x27;mydb&#x27;) // &#x22;mydb&#x22;.one_day&#x22;.&#x22;my_measurement
-&#x22;
+ * m.<span class="apidocCodeKeywordSpan">name</span>('my_measurement') // "my_measurement"
+ * m.name('my_measurement').policy('one_day') // "one_day"."my_measurement"
+ * m.name('my_measurement').policy('one_day').db('mydb') // "mydb".one_day"."my_measurement
+"
  */
 var Measurement = (function () {
 function Measurement() {
@@ -2265,11 +2258,11 @@ function Measurement() {
  * policy and database it lives under.
  *
  * @example
- * m.name(&#x27;my_measurement&#x27;) // &#x22;my_measurement&#x22;
- * m.name(&#x27;my_measurement&#x27;).<span class="apidocCodeKeywordSpan">policy</span>(&#x27;one_day&#x27;) // &#x22;one_day&#x22
-;.&#x22;my_measurement&#x22;
- * m.name(&#x27;my_measurement&#x27;).policy(&#x27;one_day&#x27;).db(&#x27;mydb&#x27;) // &#x22;mydb&#x22;.one_day&#x22;.&#x22;my_measurement
-&#x22;
+ * m.name('my_measurement') // "my_measurement"
+ * m.name('my_measurement').<span class="apidocCodeKeywordSpan">policy</span>('one_day') // "one_day"
+;."my_measurement"
+ * m.name('my_measurement').policy('one_day').db('mydb') // "mydb".one_day"."my_measurement
+"
  */
 var Measurement = (function () {
 function Measurement() {
@@ -2290,19 +2283,19 @@ function Measurement() {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">toString = function () {
     if (!this.parts[2]) {
-        throw new Error(&#x22;You must specify a measurement name to query! Got `&#x22; + this.parts[2] + &#x22;`&#x22;);
+        throw new Error("You must specify a measurement name to query! Got `" + this.parts[2] + "`");
     }
     return this.parts.filter(function (p) { return !!p; })
         .map(function (p) { return grammar_1.escape.quoted(p); })
-        .join(&#x27;.&#x27;);
+        .join('.');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-&#x22;use strict&#x22;;
-Object.defineProperty(exports, &#x22;__esModule&#x22;, { value: true });
-var grammar_1 = require(&#x22;./grammar&#x22;);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var grammar_1 = require("./grammar");
 function regexHasFlags(re) {
-   if (typeof re.flags !== &#x27;undefined&#x27;) {
-       return re.flags.length &#x3e; 0;
+   if (typeof re.flags !== 'undefined') {
+       return re.flags.length &gt; 0;
    }
    return !(/\/$/).test(re.<span class="apidocCodeKeywordSpan">toString</span>());
 }
@@ -2340,14 +2333,14 @@ exports.isNumeric = isNumeric;
  * your provided string.
  * @class
  * @example
- * influx.createDatabase(new Influx.<span class="apidocCodeKeywordSpan">Raw</span>(&#x27;This won\&#x27;t be escaped!&#x27;));
+ * influx.createDatabase(new Influx.<span class="apidocCodeKeywordSpan">Raw</span>('This won\'t be escaped!'));
  */
 var Raw = (function () {
 /**
  * Wraps a string so that it is not escaped in Influx queries.
  * @param {String} value
  * @example
- * influx.createDatabase(new Influx.Raw(&#x27;This won\&#x27;t be escaped!&#x27;));
+ * influx.createDatabase(new Influx.Raw('This won\'t be escaped!'));
 ...</pre></li>
     </ul>
 
@@ -2379,7 +2372,7 @@ Escaper.prototype.escape = function (val) {
         return val.<span class="apidocCodeKeywordSpan">getValue</span>();
     }
     var chunkIndex = this.re.lastIndex = 0;
-    var escapedVal = &#x27;&#x27;;
+    var escapedVal = '';
     var match = this.re.exec(val);
     while (match) {
         escapedVal += val.slice(chunkIndex, match.index) + this.escaper + match[0];
@@ -2403,7 +2396,7 @@ Escaper.prototype.escape = function (val) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function ResultError(message) {
     var _this = _super.call(this) || this;
-    _this.message = &#x22;Error from InfluxDB: &#x22; + message;
+    _this.message = "Error from InfluxDB: " + message;
     return _this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2425,7 +2418,7 @@ Escaper.prototype.escape = function (val) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function ResultError(message) {
     var _this = _super.call(this) || this;
-    _this.message = &#x22;Error from InfluxDB: &#x22; + message;
+    _this.message = "Error from InfluxDB: " + message;
     return _this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2476,7 +2469,7 @@ Escaper.prototype.escape = function (val) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function parseMeasurement(q) {
-    if (typeof q.measurement === &#x27;function&#x27;) {
+    if (typeof q.measurement === 'function') {
         return q.measurement(new Measurement()).toString();
     }
     return q.measurement;
@@ -2494,7 +2487,7 @@ Escaper.prototype.escape = function (val) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function parseWhere(q) {
-    if (typeof q.where === &#x27;function&#x27;) {
+    if (typeof q.where === 'function') {
         return q.where(new Expression()).toString();
     }
     return q.where;
@@ -2527,14 +2520,14 @@ exports.isNumeric = isNumeric;
  * your provided string.
  * @class
  * @example
- * influx.createDatabase(new Influx.<span class="apidocCodeKeywordSpan">Raw</span>(&#x27;This won\&#x27;t be escaped!&#x27;));
+ * influx.createDatabase(new Influx.<span class="apidocCodeKeywordSpan">Raw</span>('This won\'t be escaped!'));
  */
 var Raw = (function () {
 /**
  * Wraps a string so that it is not escaped in Influx queries.
  * @param {String} value
  * @example
- * influx.createDatabase(new Influx.Raw(&#x27;This won\&#x27;t be escaped!&#x27;));
+ * influx.createDatabase(new Influx.Raw('This won\'t be escaped!'));
 ...</pre></li>
     </ul>
 
@@ -2558,17 +2551,17 @@ switch (_this.options.fields[field]) {
         coerced = grammar_1.escape.quoted(String(value));
         break;
     case grammar_1.FieldType.INTEGER:
-        if (typ !== &#x27;number&#x27; &#x26;&#x26; !grammar_1.<span class="apidocCodeKeywordSpan">isNumeric</span>(String(value
+        if (typ !== 'number' &amp;&amp; !grammar_1.<span class="apidocCodeKeywordSpan">isNumeric</span>(String(value
 ))) {
-            throw new Error(&#x22;Expected numeric value for &#x22; + _this.ref(field) + &#x22;, but got &#x27;&#x22; + value + &#
-x22;&#x27;!&#x22;);
+            throw new Error("Expected numeric value for " + _this.ref(field) + ", but got '" + value + &amp;#
+x22;'!");
         }
-        coerced = String(Math.floor(value)) + &#x27;i&#x27;;
+        coerced = String(Math.floor(value)) + 'i';
         break;
     case grammar_1.FieldType.FLOAT:
-        if (typ !== &#x27;number&#x27; &#x26;&#x26; !grammar_1.isNumeric(String(value))) {
-            throw new Error(&#x22;Expected numeric value for &#x22; + _this.ref(field) + &#x22;, but got &#x27;&#x22; + value + &#
-x22;&#x27;!&#x22;);
+        if (typ !== 'number' &amp;&amp; !grammar_1.isNumeric(String(value))) {
+            throw new Error("Expected numeric value for " + _this.ref(field) + ", but got '" + value + &amp;#
+x22;'!");
 ...</pre></li>
     </ul>
 
@@ -2590,20 +2583,20 @@ x22;&#x27;!&#x22;);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">measurement = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-        .join(&#x27;.&#x27;);
+        .join('.');
 };
 return Measurement;
 }());
 exports.Measurement = Measurement;
 function parseMeasurement(q) {
-if (typeof q.measurement === &#x27;function&#x27;) {
+if (typeof q.measurement === 'function') {
     return q.<span class="apidocCodeKeywordSpan">measurement</span>(new Measurement()).toString();
 }
 return q.measurement;
 }
 exports.parseMeasurement = parseMeasurement;
 function parseWhere(q) {
-if (typeof q.where === &#x27;function&#x27;) {
+if (typeof q.where === 'function') {
     return q.where(new Expression()).toString();
 ...</pre></li>
     </ul>
@@ -2651,14 +2644,14 @@ Expression.prototype.field = function (name) {
  */
 Expression.prototype.value = function (value) {
     switch (typeof value) {
-        case &#x27;number&#x27;:
+        case 'number':
             this.query.push(value);
             return this;
-        case &#x27;string&#x27;:
+        case 'string':
             this.query.push(grammar_1.escape.<span class="apidocCodeKeywordSpan">stringLit</span>(value));
             return this;
-        case &#x27;boolean&#x27;:
-            this.query.push(value ? &#x27;TRUE&#x27; : &#x27;FALSE&#x27;);
+        case 'boolean':
+            this.query.push(value ? 'TRUE' : 'FALSE');
             return this;
         default:
             if (value instanceof Date) {
@@ -2680,17 +2673,17 @@ Expression.prototype.value = function (value) {
  *     and field keys on the line protocol.
  *
  * @example
- * console.log(escape.quoted(&#x27;my_&#x22;db&#x27;)); // =&#x3e; &#x22;my_\&#x22;db&#x22;
- * console.log(escape.stringLit(&#x27;hello\&#x27;world&#x27;)); // =&#x3e; &#x27;hello\&#x27;world&#x27;
+ * console.log(escape.quoted('my_"db')); // =&gt; "my_\"db"
+ * console.log(escape.stringLit('hello\'world')); // =&gt; 'hello\'world'
  *
- * console.log(escape.measurement(&#x27;my measurement&#x27;)); // =&#x3e; my\ measurement
- * console.log(escape.<span class="apidocCodeKeywordSpan">tag</span>(&#x27;my tag=&#x27;)); // =&#x3e; my\ tag\=
+ * console.log(escape.measurement('my measurement')); // =&gt; my\ measurement
+ * console.log(escape.<span class="apidocCodeKeywordSpan">tag</span>('my tag=')); // =&gt; my\ tag\=
  */
 exports.escape = {
 /**
  * measurement escapes measurement names.
  */
-measurement: bindEsc(new Escaper([&#x27;,&#x27;, &#x27; &#x27;])),
+measurement: bindEsc(new Escaper([',', ' '])),
 /**
 ...</pre></li>
     </ul>
@@ -2764,7 +2757,7 @@ Pool.prototype.addHost = function (url, options) {
     return host;
 };
 /**
- * Returns true if there&#x27;s any host available to by queried.
+ * Returns true if there's any host available to by queried.
  * @return {Boolean}
  */
 ...</pre></li>
@@ -2795,14 +2788,14 @@ exports.isNumeric = isNumeric;
  * your provided string.
  * @class
  * @example
- * influx.createDatabase(new Influx.<span class="apidocCodeKeywordSpan">Raw</span>(&#x27;This won\&#x27;t be escaped!&#x27;));
+ * influx.createDatabase(new Influx.<span class="apidocCodeKeywordSpan">Raw</span>('This won\'t be escaped!'));
  */
 var Raw = (function () {
 /**
  * Wraps a string so that it is not escaped in Influx queries.
  * @param {String} value
  * @example
- * influx.createDatabase(new Influx.Raw(&#x27;This won\&#x27;t be escaped!&#x27;));
+ * influx.createDatabase(new Influx.Raw('This won\'t be escaped!'));
 ...</pre></li>
     </ul>
 
@@ -2816,13 +2809,13 @@ var Raw = (function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function castTimestamp(timestamp, precision) {
-    if (typeof timestamp === &#x27;string&#x27;) {
+    if (typeof timestamp === 'string') {
         if (!ds_1.isNumeric(timestamp)) {
-            throw new Error(&#x22;Expected numeric value for, timestamp, but got &#x27;&#x22; + timestamp + &#x22;&#x27;!&#x22;);
+            throw new Error("Expected numeric value for, timestamp, but got '" + timestamp + "'!");
         }
         return timestamp;
     }
-    if (typeof timestamp === &#x27;number&#x27;) {
+    if (typeof timestamp === 'number') {
         return String(timestamp);
     }
     return dateToTime(timestamp, precision);
@@ -2872,8 +2865,8 @@ var Raw = (function () {
     <li>example usage<pre class="apidocCodePre">...
     this.query.push(grammar_1.escape.stringLit(value));
     return this;
-case &#x27;boolean&#x27;:
-    this.query.push(value ? &#x27;TRUE&#x27; : &#x27;FALSE&#x27;);
+case 'boolean':
+    this.query.push(value ? 'TRUE' : 'FALSE');
     return this;
 default:
     if (value instanceof Date) {
@@ -2882,8 +2875,8 @@ default:
     }
     if (value instanceof RegExp) {
         if (regexHasFlags(value)) {
-            throw new Error(&#x27;Attempted to query using a regex with flags, &#x27; +
-                &#x27;but Influx doesn\&#x27;t support flags in queries.&#x27;);
+            throw new Error('Attempted to query using a regex with flags, ' +
+                'but Influx doesn\'t support flags in queries.');
         }
 ...</pre></li>
     </ul>
@@ -2908,17 +2901,17 @@ switch (_this.options.fields[field]) {
         coerced = grammar_1.escape.quoted(String(value));
         break;
     case grammar_1.FieldType.INTEGER:
-        if (typ !== &#x27;number&#x27; &#x26;&#x26; !grammar_1.<span class="apidocCodeKeywordSpan">isNumeric</span>(String(value
+        if (typ !== 'number' &amp;&amp; !grammar_1.<span class="apidocCodeKeywordSpan">isNumeric</span>(String(value
 ))) {
-            throw new Error(&#x22;Expected numeric value for &#x22; + _this.ref(field) + &#x22;, but got &#x27;&#x22; + value + &#
-x22;&#x27;!&#x22;);
+            throw new Error("Expected numeric value for " + _this.ref(field) + ", but got '" + value + &amp;#
+x22;'!");
         }
-        coerced = String(Math.floor(value)) + &#x27;i&#x27;;
+        coerced = String(Math.floor(value)) + 'i';
         break;
     case grammar_1.FieldType.FLOAT:
-        if (typ !== &#x27;number&#x27; &#x26;&#x26; !grammar_1.isNumeric(String(value))) {
-            throw new Error(&#x22;Expected numeric value for &#x22; + _this.ref(field) + &#x22;, but got &#x27;&#x22; + value + &#
-x22;&#x27;!&#x22;);
+        if (typ !== 'number' &amp;&amp; !grammar_1.isNumeric(String(value))) {
+            throw new Error("Expected numeric value for " + _this.ref(field) + ", but got '" + value + &amp;#
+x22;'!");
 ...</pre></li>
     </ul>
 
@@ -2932,8 +2925,8 @@ x22;&#x27;!&#x22;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isoOrTimeToDate(stamp, precision) {
-    if (precision === void 0) { precision = &#x27;n&#x27;; }
-    if (typeof stamp === &#x27;string&#x27;) {
+    if (precision === void 0) { precision = 'n'; }
+    if (typeof stamp === 'string') {
         return nanoManipulator.isoToDate(stamp);
     }
     else {
@@ -2942,19 +2935,19 @@ x22;&#x27;!&#x22;);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 var lastEnd = 0;
-for (var i = 0; i &#x3c; series.length; i += 1, lastEnd = results.length) {
+for (var i = 0; i &lt; series.length; i += 1, lastEnd = results.length) {
     var _a = series[i], _b = _a.columns, columns = _b === void 0 ? [] : _b, _c = _a.values, values = _c === void 0 ? [] : _c;
-    for (var k = 0; k &#x3c; values.length; k += 1) {
+    for (var k = 0; k &lt; values.length; k += 1) {
         var obj = {};
-        for (var j = 0; j &#x3c; columns.length; j += 1) {
-            if (columns[j] === &#x27;time&#x27;) {
+        for (var j = 0; j &lt; columns.length; j += 1) {
+            if (columns[j] === 'time') {
                 obj.time = grammar_1.<span class="apidocCodeKeywordSpan">isoOrTimeToDate</span>(values[k][j], precision);
             }
             else {
                 obj[columns[j]] = values[k][j];
             }
         }
-        for (var j = 0; j &#x3c; tags.length; j += 1) {
+        for (var j = 0; j &lt; tags.length; j += 1) {
             obj[tags[j]] = series[i].tags[tags[j]];
 ...</pre></li>
     </ul>
@@ -3029,7 +3022,7 @@ for (var i = 0; i &#x3c; series.length; i += 1, lastEnd = results.length) {
     var _this = _super.call(this) || this;
     _this.req = req;
     _this.res = res;
-    _this.message = &#x22;A &#x22; + res.statusCode + &#x22; &#x22; + res.statusMessage + &#x22; error occurred: &#x22; + body;
+    _this.message = "A " + res.statusCode + " " + res.statusMessage + " error occurred: " + body;
     Object.setPrototypeOf(_this, RequestError.prototype);
     return _this;
 }</pre></li>
@@ -3070,7 +3063,7 @@ for (var i = 0; i &#x3c; series.length; i += 1, lastEnd = results.length) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function ResultError(message) {
     var _this = _super.call(this) || this;
-    _this.message = &#x22;Error from InfluxDB: &#x22; + message;
+    _this.message = "Error from InfluxDB: " + message;
     return _this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -3086,7 +3079,7 @@ for (var i = 0; i &#x3c; series.length; i += 1, lastEnd = results.length) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function assertNoErrors(res) {
-    for (var i = 0; i &#x3c; res.results.length; i += 1) {
+    for (var i = 0; i &lt; res.results.length; i += 1) {
         var error = res.results[i].error;
         if (error) {
             throw new ResultError(error);
@@ -3146,8 +3139,8 @@ Host.prototype.fail = function () {
     <li>description and source-code<pre class="apidocCodePre">function parseSingle(res, precision) {
     assertNoErrors(res);
     if (res.results.length !== 1) {
-        throw new Error(&#x27;node-influx expected the results length to equal 1, but &#x27; +
-            (&#x22;it was &#x22; + 0 + &#x22;. Please report this here: https://git.io/influx-err&#x22;));
+        throw new Error('node-influx expected the results length to equal 1, but ' +
+            ("it was " + 0 + ". Please report this here: https://git.io/influx-err"));
     }
     return parseInner(res.results[0].series, precision);
 }</pre></li>
@@ -3192,7 +3185,7 @@ Host.prototype.fail = function () {
     <li>description and source-code<pre class="apidocCodePre">function coerceBadly(fields) {
     return Object.keys(fields).sort().map(function (field) {
         var value = fields[field];
-        if (typeof value === &#x27;string&#x27;) {
+        if (typeof value === 'string') {
             return [field, grammar_1.escape.quoted(value)];
         }
         else {
@@ -3218,13 +3211,13 @@ Host.prototype.fail = function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function castTimestamp(timestamp, precision) {
-    if (typeof timestamp === &#x27;string&#x27;) {
+    if (typeof timestamp === 'string') {
         if (!ds_1.isNumeric(timestamp)) {
-            throw new Error(&#x22;Expected numeric value for, timestamp, but got &#x27;&#x22; + timestamp + &#x22;&#x27;!&#x22;);
+            throw new Error("Expected numeric value for, timestamp, but got '" + timestamp + "'!");
         }
         return timestamp;
     }
-    if (typeof timestamp === &#x27;number&#x27;) {
+    if (typeof timestamp === 'number') {
         return String(timestamp);
     }
     return dateToTime(timestamp, precision);
@@ -3274,8 +3267,8 @@ Host.prototype.fail = function () {
     <li>example usage<pre class="apidocCodePre">...
     this.query.push(grammar_1.escape.stringLit(value));
     return this;
-case &#x27;boolean&#x27;:
-    this.query.push(value ? &#x27;TRUE&#x27; : &#x27;FALSE&#x27;);
+case 'boolean':
+    this.query.push(value ? 'TRUE' : 'FALSE');
     return this;
 default:
     if (value instanceof Date) {
@@ -3284,8 +3277,8 @@ default:
     }
     if (value instanceof RegExp) {
         if (regexHasFlags(value)) {
-            throw new Error(&#x27;Attempted to query using a regex with flags, &#x27; +
-                &#x27;but Influx doesn\&#x27;t support flags in queries.&#x27;);
+            throw new Error('Attempted to query using a regex with flags, ' +
+                'but Influx doesn\'t support flags in queries.');
         }
 ...</pre></li>
     </ul>
@@ -3300,8 +3293,8 @@ default:
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isoOrTimeToDate(stamp, precision) {
-    if (precision === void 0) { precision = &#x27;n&#x27;; }
-    if (typeof stamp === &#x27;string&#x27;) {
+    if (precision === void 0) { precision = 'n'; }
+    if (typeof stamp === 'string') {
         return nanoManipulator.isoToDate(stamp);
     }
     else {
@@ -3310,19 +3303,19 @@ default:
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 var lastEnd = 0;
-for (var i = 0; i &#x3c; series.length; i += 1, lastEnd = results.length) {
+for (var i = 0; i &lt; series.length; i += 1, lastEnd = results.length) {
     var _a = series[i], _b = _a.columns, columns = _b === void 0 ? [] : _b, _c = _a.values, values = _c === void 0 ? [] : _c;
-    for (var k = 0; k &#x3c; values.length; k += 1) {
+    for (var k = 0; k &lt; values.length; k += 1) {
         var obj = {};
-        for (var j = 0; j &#x3c; columns.length; j += 1) {
-            if (columns[j] === &#x27;time&#x27;) {
+        for (var j = 0; j &lt; columns.length; j += 1) {
+            if (columns[j] === 'time') {
                 obj.time = grammar_1.<span class="apidocCodeKeywordSpan">isoOrTimeToDate</span>(values[k][j], precision);
             }
             else {
                 obj[columns[j]] = values[k][j];
             }
         }
-        for (var j = 0; j &#x3c; tags.length; j += 1) {
+        for (var j = 0; j &lt; tags.length; j += 1) {
             obj[tags[j]] = series[i].tags[tags[j]];
 ...</pre></li>
     </ul>
@@ -3357,3 +3350,4 @@ for (var i = 0; i &#x3c; series.length; i += 1, lastEnd = results.length) {
     ]
 </div>
 </div>
+</body></html>

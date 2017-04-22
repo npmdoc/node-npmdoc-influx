@@ -51,7 +51,7 @@
 
         href="https://github.com/node-influx/node-influx#readme"
 
-    >influx (v5.0.6)</a>
+    >influx (v5.0.7)</a>
 </h1>
 <h4>InfluxDB Client</h4>
 <div class="apidocSectionDiv"><a
@@ -177,7 +177,61 @@
 
         <li>
 
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>builder</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>ds</span>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>escape</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>exponential</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>host</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>index</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>pool</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>results</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>schema</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.</span>times</span>
 
         </li>
 
@@ -628,6 +682,74 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.builder">module influx.builder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.builder.Expression">
+            function <span class="apidocSignatureSpan">influx.builder.</span>Expression
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.builder.Measurement">
+            function <span class="apidocSignatureSpan">influx.builder.</span>Measurement
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.builder.parseMeasurement">
+            function <span class="apidocSignatureSpan">influx.builder.</span>parseMeasurement
+            <span class="apidocSignatureSpan">(q)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.builder.parseWhere">
+            function <span class="apidocSignatureSpan">influx.builder.</span>parseWhere
+            <span class="apidocSignatureSpan">(q)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.ds">module influx.ds</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.ds.Raw">
+            function <span class="apidocSignatureSpan">influx.ds.</span>Raw
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.ds.isNumeric">
+            function <span class="apidocSignatureSpan">influx.ds.</span>isNumeric
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.ds.</span>FieldType</span>
+
+        </li>
+
+    </ol></li>
+
     <li class="apidocModuleLi"><a href="#apidoc.module.influx.escape">module influx.escape</a><ol>
 
         <li>
@@ -668,6 +790,265 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.exponential">module influx.exponential</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.exponential.ExponentialBackoff">
+            function <span class="apidocSignatureSpan">influx.exponential.</span>ExponentialBackoff
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.host">module influx.host</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.host.Host">
+            function <span class="apidocSignatureSpan">influx.host.</span>Host
+            <span class="apidocSignatureSpan">(url, backoff, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.index">module influx.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.index.Raw">
+            function <span class="apidocSignatureSpan">influx.index.</span>Raw
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.index.castTimestamp">
+            function <span class="apidocSignatureSpan">influx.index.</span>castTimestamp
+            <span class="apidocSignatureSpan">(timestamp, precision)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.index.dateToTime">
+            function <span class="apidocSignatureSpan">influx.index.</span>dateToTime
+            <span class="apidocSignatureSpan">(date, precision)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.index.formatDate">
+            function <span class="apidocSignatureSpan">influx.index.</span>formatDate
+            <span class="apidocSignatureSpan">(date)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.index.isNumeric">
+            function <span class="apidocSignatureSpan">influx.index.</span>isNumeric
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.index.isoOrTimeToDate">
+            function <span class="apidocSignatureSpan">influx.index.</span>isoOrTimeToDate
+            <span class="apidocSignatureSpan">(stamp, precision)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.index.toNanoDate">
+            function <span class="apidocSignatureSpan">influx.index.</span>toNanoDate
+            <span class="apidocSignatureSpan">(timestamp)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.index.</span>FieldType</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.index.</span>Precision</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.index.</span>escape</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.pool">module influx.pool</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.pool.Pool">
+            function <span class="apidocSignatureSpan">influx.pool.</span>Pool
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.pool.RequestError">
+            function <span class="apidocSignatureSpan">influx.pool.</span>RequestError
+            <span class="apidocSignatureSpan">(req, res, body)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.pool.ServiceNotAvailableError">
+            function <span class="apidocSignatureSpan">influx.pool.</span>ServiceNotAvailableError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.results">module influx.results</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.results.ResultError">
+            function <span class="apidocSignatureSpan">influx.results.</span>ResultError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.results.assertNoErrors">
+            function <span class="apidocSignatureSpan">influx.results.</span>assertNoErrors
+            <span class="apidocSignatureSpan">(res)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.results.parse">
+            function <span class="apidocSignatureSpan">influx.results.</span>parse
+            <span class="apidocSignatureSpan">(res, precision)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.results.parseSingle">
+            function <span class="apidocSignatureSpan">influx.results.</span>parseSingle
+            <span class="apidocSignatureSpan">(res, precision)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.schema">module influx.schema</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.schema.Schema">
+            function <span class="apidocSignatureSpan">influx.schema.</span>Schema
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.schema.coerceBadly">
+            function <span class="apidocSignatureSpan">influx.schema.</span>coerceBadly
+            <span class="apidocSignatureSpan">(fields)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.influx.times">module influx.times</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.times.castTimestamp">
+            function <span class="apidocSignatureSpan">influx.times.</span>castTimestamp
+            <span class="apidocSignatureSpan">(timestamp, precision)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.times.dateToTime">
+            function <span class="apidocSignatureSpan">influx.times.</span>dateToTime
+            <span class="apidocSignatureSpan">(date, precision)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.times.formatDate">
+            function <span class="apidocSignatureSpan">influx.times.</span>formatDate
+            <span class="apidocSignatureSpan">(date)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.times.isoOrTimeToDate">
+            function <span class="apidocSignatureSpan">influx.times.</span>isoOrTimeToDate
+            <span class="apidocSignatureSpan">(stamp, precision)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.influx.times.toNanoDate">
+            function <span class="apidocSignatureSpan">influx.times.</span>toNanoDate
+            <span class="apidocSignatureSpan">(timestamp)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">influx.times.</span>Precision</span>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -698,11 +1079,11 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function InfluxDB(options) {
     var _this = this;
-<span class="apidocCodeCommentSpan">    /**
+    /**
      * Map of Schema instances defining measurements in Influx.
      * @private
      */
-</span>    this.schema = Object.create(null);
+    this.schema = Object.create(null);
     // Figure out how to parse whatever we were passed in into a IClusterConfig.
     if (typeof options === &#x27;string&#x27;) {
         options = parseOptionsUrl(options);
@@ -776,7 +1157,23 @@
     <li>description and source-code<pre class="apidocCodePre">function Raw(value) {
     this.value = value;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+exports.isNumeric = isNumeric;
+/**
+ * You can provide Raw values to Influx methods to prevent it from escaping
+ * your provided string.
+ * @class
+ * @example
+ * influx.createDatabase(new Influx.<span class="apidocCodeKeywordSpan">Raw</span>(&#x27;This won\&#x27;t be escaped!&#x27;));
+ */
+var Raw = (function () {
+/**
+ * Wraps a string so that it is not escaped in Influx queries.
+ * @param {String} value
+ * @example
+ * influx.createDatabase(new Influx.Raw(&#x27;This won\&#x27;t be escaped!&#x27;));
+...</pre></li>
     </ul>
 
 
@@ -868,6 +1265,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
@@ -921,7 +1336,23 @@
     this.query.push(grammar_1.escape.quoted(name));
     return this;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* Expression is used to build filtering expressions, like those used in WHERE
+* clauses. It can be used for fluent and safe building of queries using
+* untrusted input.
+*
+* @example
+* e =&#x3e; e
+*   .<span class="apidocCodeKeywordSpan">field</span>(&#x27;host&#x27;).equals.value(&#x27;ares.peet.io&#x27;)
+*   .or
+*   .field(&#x27;host&#x27;).matches(/example\.com$/)
+*   .or
+*   .expr(e =&#x3e; e
+*     .field(&#x27;country&#x27;).equals.value(&#x27;US&#x27;)
+*     .and
+*     .field(&#x27;state&#x27;).equals.value(&#x27;WA&#x27;));
+...</pre></li>
     </ul>
 
 
@@ -937,7 +1368,23 @@
     this.field(name);
     return this;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *     and field keys on the line protocol.
+ *
+ * @example
+ * console.log(escape.quoted(&#x27;my_&#x22;db&#x27;)); // =&#x3e; &#x22;my_\&#x22;db&#x22;
+ * console.log(escape.stringLit(&#x27;hello\&#x27;world&#x27;)); // =&#x3e; &#x27;hello\&#x27;world&#x27;
+ *
+ * console.log(escape.measurement(&#x27;my measurement&#x27;)); // =&#x3e; my\ measurement
+ * console.log(escape.<span class="apidocCodeKeywordSpan">tag</span>(&#x27;my tag=&#x27;)); // =&#x3e; my\ tag\=
+ */
+exports.escape = {
+/**
+ * measurement escapes measurement names.
+ */
+measurement: bindEsc(new Escaper([&#x27;,&#x27;, &#x27; &#x27;])),
+/**
+...</pre></li>
     </ul>
 
 
@@ -952,7 +1399,23 @@
     <li>description and source-code<pre class="apidocCodePre">toString = function () {
     return this.query.join(&#x27; &#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&#x22;use strict&#x22;;
+Object.defineProperty(exports, &#x22;__esModule&#x22;, { value: true });
+var grammar_1 = require(&#x22;./grammar&#x22;);
+function regexHasFlags(re) {
+   if (typeof re.flags !== &#x27;undefined&#x27;) {
+       return re.flags.length &#x3e; 0;
+   }
+   return !(/\/$/).test(re.<span class="apidocCodeKeywordSpan">toString</span>());
+}
+/**
+* Expression is used to build filtering expressions, like those used in WHERE
+* clauses. It can be used for fluent and safe building of queries using
+* untrusted input.
+*
+* @example
+...</pre></li>
     </ul>
 
 
@@ -996,7 +1459,23 @@
                 &#x27;query. If you think this is a bug, open an issue here: https://git.io/influx-err&#x27;);
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* Expression is used to build filtering expressions, like those used in WHERE
+* clauses. It can be used for fluent and safe building of queries using
+* untrusted input.
+*
+* @example
+* e =&#x3e; e
+*   .field(&#x27;host&#x27;).equals.<span class="apidocCodeKeywordSpan">value</span>(&#x27;ares.peet.io&#x27;)
+*   .or
+*   .field(&#x27;host&#x27;).matches(/example\.com$/)
+*   .or
+*   .expr(e =&#x3e; e
+*     .field(&#x27;country&#x27;).equals.value(&#x27;US&#x27;)
+*     .and
+*     .field(&#x27;state&#x27;).equals.value(&#x27;WA&#x27;));
+...</pre></li>
     </ul>
 
 
@@ -1015,11 +1494,11 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function InfluxDB(options) {
     var _this = this;
-<span class="apidocCodeCommentSpan">    /**
+    /**
      * Map of Schema instances defining measurements in Influx.
      * @private
      */
-</span>    this.schema = Object.create(null);
+    this.schema = Object.create(null);
     // Figure out how to parse whatever we were passed in into a IClusterConfig.
     if (typeof options === &#x27;string&#x27;) {
         options = parseOptionsUrl(options);
@@ -1123,7 +1602,23 @@
         q: &#x22;create database &#x22; + grammar.escape.quoted(databaseName),
     }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+exports.isNumeric = isNumeric;
+/**
+ * You can provide Raw values to Influx methods to prevent it from escaping
+ * your provided string.
+ * @class
+ * @example
+ * influx.<span class="apidocCodeKeywordSpan">createDatabase</span>(new Influx.Raw(&#x27;This won\&#x27;t be escaped!&#x27;));
+ */
+var Raw = (function () {
+/**
+ * Wraps a string so that it is not escaped in Influx queries.
+ * @param {String} value
+ * @example
+ * influx.createDatabase(new Influx.Raw(&#x27;This won\&#x27;t be escaped!&#x27;));
+...</pre></li>
     </ul>
 
 
@@ -1526,8 +2021,8 @@
     <li>description and source-code<pre class="apidocCodePre">revokePrivilege = function (username, privilege, database) {
     if (database === void 0) { database = this.defaultDB(); }
     return this.pool.json(this.getQueryOpts({
-        q: &#x22;revoke &#x22; + privilege + &#x22; from &#x22; + grammar.escape.quoted(username) + &#x22; on &#x22;
-            + grammar.escape.quoted(database),
+        q: &#x22;revoke &#x22; + privilege + &#x22; on &#x22; + grammar.escape.quoted(database) + &#x22; from &#x22;
+            + grammar.escape.quoted(username),
     }, &#x27;POST&#x27;)).then(results_1.assertNoErrors);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1697,7 +2192,24 @@ point.measurement, timestamp = point.timestamp;
     this.parts[0] = db;
     return this;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Measurement creates a reference to a particular measurement. You can
+ * reference it solely by its name, but you can also specify the retention
+ * policy and database it lives under.
+ *
+ * @example
+ * m.name(&#x27;my_measurement&#x27;) // &#x22;my_measurement&#x22;
+ * m.name(&#x27;my_measurement&#x27;).policy(&#x27;one_day&#x27;) // &#x22;one_day&#x22;.&#x22;my_measurement&#x22;
+ * m.name(&#x27;my_measurement&#x27;).policy(&#x27;one_day&#x27;).<span class="apidocCodeKeywordSpan">db</span>(&#x27;mydb&#x27;) // &#
+x22;mydb&#x22;.one_day&#x22;.&#x22;my_measurement&#x22;
+ */
+var Measurement = (function () {
+function Measurement() {
+    this.parts = [null, null, null];
+}
+/**
+ * Sets the measurement name.
+...</pre></li>
     </ul>
 
 
@@ -1713,7 +2225,24 @@ point.measurement, timestamp = point.timestamp;
     this.parts[2] = name;
     return this;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+exports.Expression = Expression;
+/**
+ * Measurement creates a reference to a particular measurement. You can
+ * reference it solely by its name, but you can also specify the retention
+ * policy and database it lives under.
+ *
+ * @example
+ * m.<span class="apidocCodeKeywordSpan">name</span>(&#x27;my_measurement&#x27;) // &#x22;my_measurement&#x22;
+ * m.name(&#x27;my_measurement&#x27;).policy(&#x27;one_day&#x27;) // &#x22;one_day&#x22;.&#x22;my_measurement&#x22;
+ * m.name(&#x27;my_measurement&#x27;).policy(&#x27;one_day&#x27;).db(&#x27;mydb&#x27;) // &#x22;mydb&#x22;.one_day&#x22;.&#x22;my_measurement
+&#x22;
+ */
+var Measurement = (function () {
+function Measurement() {
+    this.parts = [null, null, null];
+}
+...</pre></li>
     </ul>
 
 
@@ -1729,7 +2258,25 @@ point.measurement, timestamp = point.timestamp;
     this.parts[1] = retentionPolicy;
     return this;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Measurement creates a reference to a particular measurement. You can
+ * reference it solely by its name, but you can also specify the retention
+ * policy and database it lives under.
+ *
+ * @example
+ * m.name(&#x27;my_measurement&#x27;) // &#x22;my_measurement&#x22;
+ * m.name(&#x27;my_measurement&#x27;).<span class="apidocCodeKeywordSpan">policy</span>(&#x27;one_day&#x27;) // &#x22;one_day&#x22
+;.&#x22;my_measurement&#x22;
+ * m.name(&#x27;my_measurement&#x27;).policy(&#x27;one_day&#x27;).db(&#x27;mydb&#x27;) // &#x22;mydb&#x22;.one_day&#x22;.&#x22;my_measurement
+&#x22;
+ */
+var Measurement = (function () {
+function Measurement() {
+    this.parts = [null, null, null];
+}
+/**
+...</pre></li>
     </ul>
 
 
@@ -1749,7 +2296,23 @@ point.measurement, timestamp = point.timestamp;
         .map(function (p) { return grammar_1.escape.quoted(p); })
         .join(&#x27;.&#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&#x22;use strict&#x22;;
+Object.defineProperty(exports, &#x22;__esModule&#x22;, { value: true });
+var grammar_1 = require(&#x22;./grammar&#x22;);
+function regexHasFlags(re) {
+   if (typeof re.flags !== &#x27;undefined&#x27;) {
+       return re.flags.length &#x3e; 0;
+   }
+   return !(/\/$/).test(re.<span class="apidocCodeKeywordSpan">toString</span>());
+}
+/**
+* Expression is used to build filtering expressions, like those used in WHERE
+* clauses. It can be used for fluent and safe building of queries using
+* untrusted input.
+*
+* @example
+...</pre></li>
     </ul>
 
 
@@ -1769,7 +2332,23 @@ point.measurement, timestamp = point.timestamp;
     <li>description and source-code<pre class="apidocCodePre">function Raw(value) {
     this.value = value;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+exports.isNumeric = isNumeric;
+/**
+ * You can provide Raw values to Influx methods to prevent it from escaping
+ * your provided string.
+ * @class
+ * @example
+ * influx.createDatabase(new Influx.<span class="apidocCodeKeywordSpan">Raw</span>(&#x27;This won\&#x27;t be escaped!&#x27;));
+ */
+var Raw = (function () {
+/**
+ * Wraps a string so that it is not escaped in Influx queries.
+ * @param {String} value
+ * @example
+ * influx.createDatabase(new Influx.Raw(&#x27;This won\&#x27;t be escaped!&#x27;));
+...</pre></li>
     </ul>
 
 
@@ -1789,7 +2368,23 @@ point.measurement, timestamp = point.timestamp;
     <li>description and source-code<pre class="apidocCodePre">getValue = function () {
     return this.value;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+/**
+ * Escape replaces occurrences of special characters within the target
+ * string with the necessary escape codes.
+ */
+Escaper.prototype.escape = function (val) {
+    if (val instanceof ds_1.Raw) {
+        return val.<span class="apidocCodeKeywordSpan">getValue</span>();
+    }
+    var chunkIndex = this.re.lastIndex = 0;
+    var escapedVal = &#x27;&#x27;;
+    var match = this.re.exec(val);
+    while (match) {
+        escapedVal += val.slice(chunkIndex, match.index) + this.escaper + match[0];
+        chunkIndex = this.re.lastIndex;
+...</pre></li>
     </ul>
 
 
@@ -1840,6 +2435,149 @@ point.measurement, timestamp = point.timestamp;
 </div>
 
 <div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.builder" id="apidoc.module.influx.builder">module influx.builder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.builder.Expression" id="apidoc.element.influx.builder.Expression">
+        function <span class="apidocSignatureSpan">influx.builder.</span>Expression
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Expression() {
+    this.query = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.builder.Measurement" id="apidoc.element.influx.builder.Measurement">
+        function <span class="apidocSignatureSpan">influx.builder.</span>Measurement
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Measurement() {
+    this.parts = [null, null, null];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.builder.parseMeasurement" id="apidoc.element.influx.builder.parseMeasurement">
+        function <span class="apidocSignatureSpan">influx.builder.</span>parseMeasurement
+        <span class="apidocSignatureSpan">(q)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseMeasurement(q) {
+    if (typeof q.measurement === &#x27;function&#x27;) {
+        return q.measurement(new Measurement()).toString();
+    }
+    return q.measurement;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.builder.parseWhere" id="apidoc.element.influx.builder.parseWhere">
+        function <span class="apidocSignatureSpan">influx.builder.</span>parseWhere
+        <span class="apidocSignatureSpan">(q)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseWhere(q) {
+    if (typeof q.where === &#x27;function&#x27;) {
+        return q.where(new Expression()).toString();
+    }
+    return q.where;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.ds" id="apidoc.module.influx.ds">module influx.ds</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.ds.Raw" id="apidoc.element.influx.ds.Raw">
+        function <span class="apidocSignatureSpan">influx.ds.</span>Raw
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Raw(value) {
+    this.value = value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+exports.isNumeric = isNumeric;
+/**
+ * You can provide Raw values to Influx methods to prevent it from escaping
+ * your provided string.
+ * @class
+ * @example
+ * influx.createDatabase(new Influx.<span class="apidocCodeKeywordSpan">Raw</span>(&#x27;This won\&#x27;t be escaped!&#x27;));
+ */
+var Raw = (function () {
+/**
+ * Wraps a string so that it is not escaped in Influx queries.
+ * @param {String} value
+ * @example
+ * influx.createDatabase(new Influx.Raw(&#x27;This won\&#x27;t be escaped!&#x27;));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.ds.isNumeric" id="apidoc.element.influx.ds.isNumeric">
+        function <span class="apidocSignatureSpan">influx.ds.</span>isNumeric
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNumeric(value) {
+    return !Number.isNaN(Number(value));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+var coerced;
+switch (_this.options.fields[field]) {
+    case grammar_1.FieldType.STRING:
+        coerced = grammar_1.escape.quoted(String(value));
+        break;
+    case grammar_1.FieldType.INTEGER:
+        if (typ !== &#x27;number&#x27; &#x26;&#x26; !grammar_1.<span class="apidocCodeKeywordSpan">isNumeric</span>(String(value
+))) {
+            throw new Error(&#x22;Expected numeric value for &#x22; + _this.ref(field) + &#x22;, but got &#x27;&#x22; + value + &#
+x22;&#x27;!&#x22;);
+        }
+        coerced = String(Math.floor(value)) + &#x27;i&#x27;;
+        break;
+    case grammar_1.FieldType.FLOAT:
+        if (typ !== &#x27;number&#x27; &#x26;&#x26; !grammar_1.isNumeric(String(value))) {
+            throw new Error(&#x22;Expected numeric value for &#x22; + _this.ref(field) + &#x22;, but got &#x27;&#x22; + value + &#
+x22;&#x27;!&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.influx.escape" id="apidoc.module.influx.escape">module influx.escape</a></h1>
 
 
@@ -1851,7 +2589,23 @@ point.measurement, timestamp = point.timestamp;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">measurement = function () { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        .join(&#x27;.&#x27;);
+};
+return Measurement;
+}());
+exports.Measurement = Measurement;
+function parseMeasurement(q) {
+if (typeof q.measurement === &#x27;function&#x27;) {
+    return q.<span class="apidocCodeKeywordSpan">measurement</span>(new Measurement()).toString();
+}
+return q.measurement;
+}
+exports.parseMeasurement = parseMeasurement;
+function parseWhere(q) {
+if (typeof q.where === &#x27;function&#x27;) {
+    return q.where(new Expression()).toString();
+...</pre></li>
     </ul>
 
 
@@ -1864,7 +2618,23 @@ point.measurement, timestamp = point.timestamp;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">quoted = function () { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Inserts a field reference into the expression; the name will be
+ * automatically escaped.
+ * @param  {String} name
+ * @return {Expression}
+ */
+Expression.prototype.field = function (name) {
+    this.query.push(grammar_1.escape.<span class="apidocCodeKeywordSpan">quoted</span>(name));
+    return this;
+};
+/**
+ * Inserts a subexpression; invokes the function with a new expression
+ * that can be chained on.
+ * @param  {function(e: Expression): Expression}  fn
+ * @return {Expression}
+...</pre></li>
     </ul>
 
 
@@ -1877,7 +2647,23 @@ point.measurement, timestamp = point.timestamp;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">stringLit = function () { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+Expression.prototype.value = function (value) {
+    switch (typeof value) {
+        case &#x27;number&#x27;:
+            this.query.push(value);
+            return this;
+        case &#x27;string&#x27;:
+            this.query.push(grammar_1.escape.<span class="apidocCodeKeywordSpan">stringLit</span>(value));
+            return this;
+        case &#x27;boolean&#x27;:
+            this.query.push(value ? &#x27;TRUE&#x27; : &#x27;FALSE&#x27;);
+            return this;
+        default:
+            if (value instanceof Date) {
+                this.query.push(grammar_1.formatDate(value));
+...</pre></li>
     </ul>
 
 
@@ -1890,8 +2676,677 @@ point.measurement, timestamp = point.timestamp;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">tag = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *     and field keys on the line protocol.
+ *
+ * @example
+ * console.log(escape.quoted(&#x27;my_&#x22;db&#x27;)); // =&#x3e; &#x22;my_\&#x22;db&#x22;
+ * console.log(escape.stringLit(&#x27;hello\&#x27;world&#x27;)); // =&#x3e; &#x27;hello\&#x27;world&#x27;
+ *
+ * console.log(escape.measurement(&#x27;my measurement&#x27;)); // =&#x3e; my\ measurement
+ * console.log(escape.<span class="apidocCodeKeywordSpan">tag</span>(&#x27;my tag=&#x27;)); // =&#x3e; my\ tag\=
+ */
+exports.escape = {
+/**
+ * measurement escapes measurement names.
+ */
+measurement: bindEsc(new Escaper([&#x27;,&#x27;, &#x27; &#x27;])),
+/**
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.exponential" id="apidoc.module.influx.exponential">module influx.exponential</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.exponential.ExponentialBackoff" id="apidoc.element.influx.exponential.ExponentialBackoff">
+        function <span class="apidocSignatureSpan">influx.exponential.</span>ExponentialBackoff
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ExponentialBackoff(options) {
+    this.options = options;
+    this.counter = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var Pool = (function () {
+/**
+ * Creates a new Pool instance.
+ * @param {IPoolOptions} options
+ */
+function Pool(options) {
+    this.options = Object.assign({
+        backoff: new exponential_1.<span class="apidocCodeKeywordSpan">ExponentialBackoff</span>({
+            initial: 300,
+            max: 10 * 1000,
+            random: 1,
+        }),
+        maxRetries: 2,
+        requestTimeout: 30 * 1000,
+    }, options);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.host" id="apidoc.module.influx.host">module influx.host</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.host.Host" id="apidoc.element.influx.host.Host">
+        function <span class="apidocSignatureSpan">influx.host.</span>Host
+        <span class="apidocSignatureSpan">(url, backoff, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Host(url, backoff, options) {
+    this.backoff = backoff;
+    this.options = options;
+    this.url = urlModule.parse(url);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return setToArray(this.hostsDisabled);
+};
+/**
+ * Inserts a new host to the pool.
+ */
+Pool.prototype.addHost = function (url, options) {
+    if (options === void 0) { options = {}; }
+    var host = new host_1.<span class="apidocCodeKeywordSpan">Host</span>(url, this.options.backoff.reset(), options);
+    this.hostsAvailable.add(host);
+    return host;
+};
+/**
+ * Returns true if there&#x27;s any host available to by queried.
+ * @return {Boolean}
+ */
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.index" id="apidoc.module.influx.index">module influx.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.index.Raw" id="apidoc.element.influx.index.Raw">
+        function <span class="apidocSignatureSpan">influx.index.</span>Raw
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Raw(value) {
+    this.value = value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+exports.isNumeric = isNumeric;
+/**
+ * You can provide Raw values to Influx methods to prevent it from escaping
+ * your provided string.
+ * @class
+ * @example
+ * influx.createDatabase(new Influx.<span class="apidocCodeKeywordSpan">Raw</span>(&#x27;This won\&#x27;t be escaped!&#x27;));
+ */
+var Raw = (function () {
+/**
+ * Wraps a string so that it is not escaped in Influx queries.
+ * @param {String} value
+ * @example
+ * influx.createDatabase(new Influx.Raw(&#x27;This won\&#x27;t be escaped!&#x27;));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.index.castTimestamp" id="apidoc.element.influx.index.castTimestamp">
+        function <span class="apidocSignatureSpan">influx.index.</span>castTimestamp
+        <span class="apidocSignatureSpan">(timestamp, precision)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function castTimestamp(timestamp, precision) {
+    if (typeof timestamp === &#x27;string&#x27;) {
+        if (!ds_1.isNumeric(timestamp)) {
+            throw new Error(&#x22;Expected numeric value for, timestamp, but got &#x27;&#x22; + timestamp + &#x22;&#x27;!&#x22;);
+        }
+        return timestamp;
+    }
+    if (typeof timestamp === &#x27;number&#x27;) {
+        return String(timestamp);
+    }
+    return dateToTime(timestamp, precision);
+}</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.index.dateToTime" id="apidoc.element.influx.index.dateToTime">
+        function <span class="apidocSignatureSpan">influx.index.</span>dateToTime
+        <span class="apidocSignatureSpan">(date, precision)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dateToTime(date, precision) {
+    var nano = asNanoDate(date);
+    if (nano) {
+        return nanoManipulator.toTime(nano, precision);
+    }
+    else {
+        return milliManipulator.toTime(date, precision);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.index.formatDate" id="apidoc.element.influx.index.formatDate">
+        function <span class="apidocSignatureSpan">influx.index.</span>formatDate
+        <span class="apidocSignatureSpan">(date)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatDate(date) {
+    var nano = asNanoDate(date);
+    if (nano) {
+        return nanoManipulator.format(nano);
+    }
+    else {
+        return milliManipulator.format(date);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.query.push(grammar_1.escape.stringLit(value));
+    return this;
+case &#x27;boolean&#x27;:
+    this.query.push(value ? &#x27;TRUE&#x27; : &#x27;FALSE&#x27;);
+    return this;
+default:
+    if (value instanceof Date) {
+        this.query.push(grammar_1.<span class="apidocCodeKeywordSpan">formatDate</span>(value));
+        return this;
+    }
+    if (value instanceof RegExp) {
+        if (regexHasFlags(value)) {
+            throw new Error(&#x27;Attempted to query using a regex with flags, &#x27; +
+                &#x27;but Influx doesn\&#x27;t support flags in queries.&#x27;);
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.index.isNumeric" id="apidoc.element.influx.index.isNumeric">
+        function <span class="apidocSignatureSpan">influx.index.</span>isNumeric
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNumeric(value) {
+    return !Number.isNaN(Number(value));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+var coerced;
+switch (_this.options.fields[field]) {
+    case grammar_1.FieldType.STRING:
+        coerced = grammar_1.escape.quoted(String(value));
+        break;
+    case grammar_1.FieldType.INTEGER:
+        if (typ !== &#x27;number&#x27; &#x26;&#x26; !grammar_1.<span class="apidocCodeKeywordSpan">isNumeric</span>(String(value
+))) {
+            throw new Error(&#x22;Expected numeric value for &#x22; + _this.ref(field) + &#x22;, but got &#x27;&#x22; + value + &#
+x22;&#x27;!&#x22;);
+        }
+        coerced = String(Math.floor(value)) + &#x27;i&#x27;;
+        break;
+    case grammar_1.FieldType.FLOAT:
+        if (typ !== &#x27;number&#x27; &#x26;&#x26; !grammar_1.isNumeric(String(value))) {
+            throw new Error(&#x22;Expected numeric value for &#x22; + _this.ref(field) + &#x22;, but got &#x27;&#x22; + value + &#
+x22;&#x27;!&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.index.isoOrTimeToDate" id="apidoc.element.influx.index.isoOrTimeToDate">
+        function <span class="apidocSignatureSpan">influx.index.</span>isoOrTimeToDate
+        <span class="apidocSignatureSpan">(stamp, precision)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isoOrTimeToDate(stamp, precision) {
+    if (precision === void 0) { precision = &#x27;n&#x27;; }
+    if (typeof stamp === &#x27;string&#x27;) {
+        return nanoManipulator.isoToDate(stamp);
+    }
+    else {
+        return nanoManipulator.timetoDate(stamp, precision);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var lastEnd = 0;
+for (var i = 0; i &#x3c; series.length; i += 1, lastEnd = results.length) {
+    var _a = series[i], _b = _a.columns, columns = _b === void 0 ? [] : _b, _c = _a.values, values = _c === void 0 ? [] : _c;
+    for (var k = 0; k &#x3c; values.length; k += 1) {
+        var obj = {};
+        for (var j = 0; j &#x3c; columns.length; j += 1) {
+            if (columns[j] === &#x27;time&#x27;) {
+                obj.time = grammar_1.<span class="apidocCodeKeywordSpan">isoOrTimeToDate</span>(values[k][j], precision);
+            }
+            else {
+                obj[columns[j]] = values[k][j];
+            }
+        }
+        for (var j = 0; j &#x3c; tags.length; j += 1) {
+            obj[tags[j]] = series[i].tags[tags[j]];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.index.toNanoDate" id="apidoc.element.influx.index.toNanoDate">
+        function <span class="apidocSignatureSpan">influx.index.</span>toNanoDate
+        <span class="apidocSignatureSpan">(timestamp)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toNanoDate(timestamp) {
+    var date = new Date(Math.floor(Number(timestamp) / nsPer.ms));
+    date._nanoTime = timestamp;
+    date.getNanoTime = nanoDateMethods.getNanoTimeFromStamp;
+    date.toNanoISOString = nanoDateMethods.toNanoISOStringFromStamp;
+    return date;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.pool" id="apidoc.module.influx.pool">module influx.pool</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.pool.Pool" id="apidoc.element.influx.pool.Pool">
+        function <span class="apidocSignatureSpan">influx.pool.</span>Pool
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Pool(options) {
+    this.options = Object.assign({
+        backoff: new exponential_1.ExponentialBackoff({
+            initial: 300,
+            max: 10 * 1000,
+            random: 1,
+        }),
+        maxRetries: 2,
+        requestTimeout: 30 * 1000,
+    }, options);
+    this.index = 0;
+    this.hostsAvailable = new Set();
+    this.hostsDisabled = new Set();
+    this.timeout = this.options.requestTimeout;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.pool.RequestError" id="apidoc.element.influx.pool.RequestError">
+        function <span class="apidocSignatureSpan">influx.pool.</span>RequestError
+        <span class="apidocSignatureSpan">(req, res, body)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RequestError(req, res, body) {
+    var _this = _super.call(this) || this;
+    _this.req = req;
+    _this.res = res;
+    _this.message = &#x22;A &#x22; + res.statusCode + &#x22; &#x22; + res.statusMessage + &#x22; error occurred: &#x22; + body;
+    Object.setPrototypeOf(_this, RequestError.prototype);
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.pool.ServiceNotAvailableError" id="apidoc.element.influx.pool.ServiceNotAvailableError">
+        function <span class="apidocSignatureSpan">influx.pool.</span>ServiceNotAvailableError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ServiceNotAvailableError(message) {
+    var _this = _super.call(this) || this;
+    _this.message = message;
+    Object.setPrototypeOf(_this, ServiceNotAvailableError.prototype);
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.results" id="apidoc.module.influx.results">module influx.results</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.results.ResultError" id="apidoc.element.influx.results.ResultError">
+        function <span class="apidocSignatureSpan">influx.results.</span>ResultError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ResultError(message) {
+    var _this = _super.call(this) || this;
+    _this.message = &#x22;Error from InfluxDB: &#x22; + message;
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.results.assertNoErrors" id="apidoc.element.influx.results.assertNoErrors">
+        function <span class="apidocSignatureSpan">influx.results.</span>assertNoErrors
+        <span class="apidocSignatureSpan">(res)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function assertNoErrors(res) {
+    for (var i = 0; i &#x3c; res.results.length; i += 1) {
+        var error = res.results[i].error;
+        if (error) {
+            throw new ResultError(error);
+        }
+    }
+    return res;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.results.parse" id="apidoc.element.influx.results.parse">
+        function <span class="apidocSignatureSpan">influx.results.</span>parse
+        <span class="apidocSignatureSpan">(res, precision)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(res, precision) {
+    assertNoErrors(res);
+    if (res.results.length === 1) {
+        return parseInner(res.results[0].series, precision);
+    }
+    else {
+        return res.results.map(function (result) { return parseInner(result.series, precision); });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Creates a new Host instance.
+ * @param {String} url
+ * @param {IBackoffStrategy} backoff
+ */
+function Host(url, backoff, options) {
+    this.backoff = backoff;
+    this.options = options;
+    this.url = urlModule.<span class="apidocCodeKeywordSpan">parse</span>(url);
+}
+/**
+ * Marks a failure on the host and returns the length of time it
+ * should be removed from the pool
+ * @return {Number} removal time in milliseconds
+ */
+Host.prototype.fail = function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.results.parseSingle" id="apidoc.element.influx.results.parseSingle">
+        function <span class="apidocSignatureSpan">influx.results.</span>parseSingle
+        <span class="apidocSignatureSpan">(res, precision)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseSingle(res, precision) {
+    assertNoErrors(res);
+    if (res.results.length !== 1) {
+        throw new Error(&#x27;node-influx expected the results length to equal 1, but &#x27; +
+            (&#x22;it was &#x22; + 0 + &#x22;. Please report this here: https://git.io/influx-err&#x22;));
+    }
+    return parseInner(res.results[0].series, precision);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.schema" id="apidoc.module.influx.schema">module influx.schema</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.schema.Schema" id="apidoc.element.influx.schema.Schema">
+        function <span class="apidocSignatureSpan">influx.schema.</span>Schema
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Schema(options) {
+    var _this = this;
+    this.options = options;
+    this.tagHash = {};
+    // fieldNames are sorted for performance: when coerceFields is run the
+    // fields will be added to the output in order.
+    this.fieldNames = Object.keys(options.fields).sort();
+    options.tags.forEach(function (tag) { _this.tagHash[tag] = true; });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.schema.coerceBadly" id="apidoc.element.influx.schema.coerceBadly">
+        function <span class="apidocSignatureSpan">influx.schema.</span>coerceBadly
+        <span class="apidocSignatureSpan">(fields)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function coerceBadly(fields) {
+    return Object.keys(fields).sort().map(function (field) {
+        var value = fields[field];
+        if (typeof value === &#x27;string&#x27;) {
+            return [field, grammar_1.escape.quoted(value)];
+        }
+        else {
+            return [field, String(value)];
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.influx.times" id="apidoc.module.influx.times">module influx.times</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.influx.times.castTimestamp" id="apidoc.element.influx.times.castTimestamp">
+        function <span class="apidocSignatureSpan">influx.times.</span>castTimestamp
+        <span class="apidocSignatureSpan">(timestamp, precision)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function castTimestamp(timestamp, precision) {
+    if (typeof timestamp === &#x27;string&#x27;) {
+        if (!ds_1.isNumeric(timestamp)) {
+            throw new Error(&#x22;Expected numeric value for, timestamp, but got &#x27;&#x22; + timestamp + &#x22;&#x27;!&#x22;);
+        }
+        return timestamp;
+    }
+    if (typeof timestamp === &#x27;number&#x27;) {
+        return String(timestamp);
+    }
+    return dateToTime(timestamp, precision);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.times.dateToTime" id="apidoc.element.influx.times.dateToTime">
+        function <span class="apidocSignatureSpan">influx.times.</span>dateToTime
+        <span class="apidocSignatureSpan">(date, precision)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dateToTime(date, precision) {
+    var nano = asNanoDate(date);
+    if (nano) {
+        return nanoManipulator.toTime(nano, precision);
+    }
+    else {
+        return milliManipulator.toTime(date, precision);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.times.formatDate" id="apidoc.element.influx.times.formatDate">
+        function <span class="apidocSignatureSpan">influx.times.</span>formatDate
+        <span class="apidocSignatureSpan">(date)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatDate(date) {
+    var nano = asNanoDate(date);
+    if (nano) {
+        return nanoManipulator.format(nano);
+    }
+    else {
+        return milliManipulator.format(date);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.query.push(grammar_1.escape.stringLit(value));
+    return this;
+case &#x27;boolean&#x27;:
+    this.query.push(value ? &#x27;TRUE&#x27; : &#x27;FALSE&#x27;);
+    return this;
+default:
+    if (value instanceof Date) {
+        this.query.push(grammar_1.<span class="apidocCodeKeywordSpan">formatDate</span>(value));
+        return this;
+    }
+    if (value instanceof RegExp) {
+        if (regexHasFlags(value)) {
+            throw new Error(&#x27;Attempted to query using a regex with flags, &#x27; +
+                &#x27;but Influx doesn\&#x27;t support flags in queries.&#x27;);
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.times.isoOrTimeToDate" id="apidoc.element.influx.times.isoOrTimeToDate">
+        function <span class="apidocSignatureSpan">influx.times.</span>isoOrTimeToDate
+        <span class="apidocSignatureSpan">(stamp, precision)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isoOrTimeToDate(stamp, precision) {
+    if (precision === void 0) { precision = &#x27;n&#x27;; }
+    if (typeof stamp === &#x27;string&#x27;) {
+        return nanoManipulator.isoToDate(stamp);
+    }
+    else {
+        return nanoManipulator.timetoDate(stamp, precision);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var lastEnd = 0;
+for (var i = 0; i &#x3c; series.length; i += 1, lastEnd = results.length) {
+    var _a = series[i], _b = _a.columns, columns = _b === void 0 ? [] : _b, _c = _a.values, values = _c === void 0 ? [] : _c;
+    for (var k = 0; k &#x3c; values.length; k += 1) {
+        var obj = {};
+        for (var j = 0; j &#x3c; columns.length; j += 1) {
+            if (columns[j] === &#x27;time&#x27;) {
+                obj.time = grammar_1.<span class="apidocCodeKeywordSpan">isoOrTimeToDate</span>(values[k][j], precision);
+            }
+            else {
+                obj[columns[j]] = values[k][j];
+            }
+        }
+        for (var j = 0; j &#x3c; tags.length; j += 1) {
+            obj[tags[j]] = series[i].tags[tags[j]];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.influx.times.toNanoDate" id="apidoc.element.influx.times.toNanoDate">
+        function <span class="apidocSignatureSpan">influx.times.</span>toNanoDate
+        <span class="apidocSignatureSpan">(timestamp)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toNanoDate(timestamp) {
+    var date = new Date(Math.floor(Number(timestamp) / nsPer.ms));
+    date._nanoTime = timestamp;
+    date.getNanoTime = nanoDateMethods.getNanoTimeFromStamp;
+    date.toNanoISOString = nanoDateMethods.toNanoISOStringFromStamp;
+    return date;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
 
 
 </div>
